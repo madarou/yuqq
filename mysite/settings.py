@@ -105,5 +105,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-STATIC_URL = '/static/'
+# modify the static location based on project path, not django install path
+STATIC_URL = BASE_DIR+"/yuqq/"
