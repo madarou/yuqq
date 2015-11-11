@@ -1,6 +1,6 @@
 <uwsgi>
     <socket>:8077</socket>
-    <chdir>/root/django-website/mysite</chdir>
+    <chdir>/root/django-website/yuqq</chdir>
     <module>django_wsgi</module>
     <processes>4</processes> <!-- 进程数 --> 
     <daemonize>uwsgi.log</daemonize>
