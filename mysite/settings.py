@@ -23,7 +23,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 SECRET_KEY = 'h36q^=r=s0gj_&984!(%rfl!^o(fp$gzcm$^vvk7!81nqkc5^g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
