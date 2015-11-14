@@ -1,5 +1,92 @@
-{% extends "public/base.html" %} 
+{% extends "public/base.html" %} {% block content %}
 
-{% block content %} 
-	{{title}}
+<!--主体-->
+<div class="row">
+
+	<!--欢迎界面-->
+	<div class="col-sm-9">
+		<img src="img/cat.jpg" class="img-responsive" />
+	</div>
+	<!--欢迎界面-->
+
+	<div class="col-sm-3" align="center">
+		<!--登录侧边栏-->
+		<form class="form-signin well" action="login" method="post">
+			<h4 class="form-signin-heading">登录</h4>
+			<label for="inputName" class="sr-only">用户名</label> <input type="text"
+				id="inputName" class="form-control" placeholder="用户名" required
+				autofocus> <label for="inputPassword" class="sr-only">密码</label>
+			<input type="password" id="inputPassword" class="form-control"
+				placeholder="密码" required>
+			<div class="row">
+				<div class="col-sm-6">
+					<label> <input type="checkbox" value="remember-me">记住我
+					</label>
+				</div>
+				<div class="col-sm-6">
+					<a href="#" class="">忘记密码?</a>
+				</div>
+			</div>
+			<button class="btn btn-sm btn-primary" type="reset">重置</button>
+			<button class="btn btn-sm btn-primary" type="submit">登录</button>
+			<hr>
+			<p class="help-block">社交账号一键登录</p>
+			<a href="#"><img src="img/weibo.png" alt="微博账号登录"
+				class="img-thumbnail-xs"></a> <a href="#"><img
+				src="img/qq.png" alt="QQ账号登录" class="img-thumbnail-xs"></a>
+		</form>
+		<!--登录侧边栏-->
+
+		<form class="well">
+			<p class="help-block">还没有帐号？</p>
+			<div class="btn-group btn-group-justified" role="group">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#myModal">免费注册</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-primary" onclick="regist()">随便看看</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+	<!--登录侧边栏-->
+</div>
+<!--主体行-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">注册</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-signin well"
+					action="<%=path %>/user/user_register" method="post">
+					<label for="inputName" class="sr-only">用户名</label> <input
+						type="text" id="inputName" class="form-control" placeholder="用户名"
+						required autofocus> <label for="inputPassword"
+						class="sr-only">密码</label> <input type="password"
+						id="inputPassword" class="form-control" placeholder="密码" required>
+					<label for="inputRePassword" class="sr-only">确认密码</label> <input
+						type="password" id="inputRePassword" class="form-control"
+						placeholder="确认密码" required> <label for="inputEmail"
+						class="sr-only">邮箱</label> <input type="email" id="inputEmail"
+						class="form-control" placeholder="邮箱" required> <label>
+						<input type="checkbox" value="agree"><a href="#">&nbsp;同意站内条款</a>
+					</label>
+
+					<button class="btn btn-sm btn-primary btn-block" type="submit">注册</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
