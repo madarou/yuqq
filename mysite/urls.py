@@ -25,5 +25,4 @@ urlpatterns = [
     url(r'^message/$',views.message,name='message'),
     url(r'^products/$',views.products,name='products'),
     url(r'^knowledge/$',views.knowledge,name='knowledge'),
-    url(r'^media/(?P<path>.*)', 'django.views.static.serve', {'document_root': '/Users/makao/Yun/Workspace/django/yuqq/yuqq/static/public/img'}),
 ]
