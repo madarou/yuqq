@@ -8,8 +8,8 @@
 <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet"
 	href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="static/public/css/index.css">
+<link rel="stylesheet" href="static/public/css/index.css">
+<link rel="stylesheet" href="static/public/css/base.css">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -18,62 +18,62 @@
     <![endif]-->
 </head>
 <body>
-	
-		{% block navbar %}
-		<!-- 导航栏 -->
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-						aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="/">鱼圈圈水族</a>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="/">首页</a></li>
-						<li class="dropdown"><a id="products" href="{% url 'products'%}" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">热销商品 <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="{% url 'products'%}">鱼</a></li>
-								<li><a href="{% url 'products'%}">鱼缸</a></li>
-								<li><a href="{% url 'products'%}">水生植物</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="{% url 'products'%}">其他</a></li>
-							</ul></li>
-						<li><a href="{% url 'services'%}">服务项目</a></li>
-						<li><a href="{% url 'knowledge'%}">专业知识</a></li>
-						<li><a href="{% url 'message'%}">鱼友分享</a></li>
-						<li><a href="{% url 'aboutme'%}">关于我们</a></li>
-						<li><a href="{% url 'message'%}">在线留言</a></li>
-					</ul>
-					<form class="navbar-form navbar-right" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search..">
-						</div>
-						<button type="submit" class="btn btn-default">搜索</button>
-					</form>
 
-				</div>
-				<!--/.nav-collapse -->
+	{% block navbar %}
+	<!-- 导航栏 -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">鱼圈圈水族</a>
 			</div>
-			<!--/.container-fluid -->
-		</nav>
-		<!-- 导航栏 -->
-		{% endblock %} 
-		<div class="container">
-		<div style="min-height:450px">
-		{% block content %} {% endblock %}
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/">首页</a></li>
+					<li class="dropdown"><a id="products"
+						href="{% url 'products'%}" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">热销商品 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'products'%}">鱼</a></li>
+							<li><a href="{% url 'products'%}">鱼缸</a></li>
+							<li><a href="{% url 'products'%}">水生植物</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="{% url 'products'%}">其他</a></li>
+						</ul></li>
+					<li><a href="{% url 'services'%}">服务项目</a></li>
+					<li><a href="{% url 'knowledge'%}">专业知识</a></li>
+					<li><a href="{% url 'message'%}">鱼友分享</a></li>
+					<li><a href="{% url 'aboutme'%}">关于我们</a></li>
+					<li><a href="{% url 'message'%}">在线留言</a></li>
+				</ul>
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search..">
+					</div>
+					<button type="submit" class="btn btn-default">搜索</button>
+				</form>
+
+			</div>
+			<!--/.nav-collapse -->
 		</div>
-		 {% block footer %}
+		<!--/.container-fluid -->
+	</nav>
+	<!-- 导航栏 -->
+	{% endblock %}
+	<div class="container">
+		<div style="min-height: 450px">{% block content %} {% endblock
+			%}</div>
+		{% block footer %}
 		<!-- 页尾 -->
 		<hr>
-		<div class="row" sytle="height:110px">
+		<div class="row alert alert-info" sytle="height:110px">
 			<div class="col-md-6">联系我们：地址，电话，qq,微信</div>
 			<div class="col-md-6">logo，官方微博，官方微信</div>
 		</div>
@@ -87,14 +87,52 @@
 	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript">  
-		$('li.dropdown').mouseover(function() {   
-	     $(this).addClass('open');    }).mouseout(function() {        $(this).removeClass('open');    }); 
+	<!-- 导航栏下拉 -->
+	<script type="text/javascript">
+		$('li.dropdown').mouseover(function() {
+			$(this).addClass('open');
+		}).mouseout(function() {
+			$(this).removeClass('open');
+		});
 	</script>
-	<script type="text/javascript">  
-		$('#products').click(function() {   
-	    	self.location='/products'; 
-	     }); 
+	<script type="text/javascript">
+		$('#products').click(function() {
+			self.location = '/products';
+		});
+	</script>
+	<!-- 导航栏下拉 -->
+	<!-- 分享到 -->
+	<script>
+		window._bd_share_config = {
+			"common" : {
+				"bdSnsKey" : {},
+				"bdText" : "",
+				"bdMini" : "2",
+				"bdMiniList" : false,
+				"bdPic" : "",
+				"bdStyle" : "0",
+				"bdSize" : "16"
+			},
+			"slide" : {
+				"type" : "slide",
+				"bdImg" : "2",
+				"bdPos" : "right",
+				"bdTop" : "100"
+			},
+			"image" : {
+				"viewList" : [ "qzone", "tsina", "weixin" ],
+				"viewText" : "分享到：",
+				"viewSize" : "32"
+			},
+			"selectShare" : {
+				"bdContainerClass" : null,
+				"bdSelectMiniList" : [ "qzone", "tsina", "weixin" ]
+			}
+		};
+		with (document)
+			0[(getElementsByTagName('head')[0] || body)
+					.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+					+ ~(-new Date() / 36e5)];
 	</script>
 </body>
 </html>
