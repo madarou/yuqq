@@ -20,3 +20,6 @@ def products(request):
 
 def knowledge(request):
     return render_to_response('public/knowledge.html',{'knowledge':'专业知识'})
+
+def share(request):
+    return render_to_response('public/share.html',{'share':'分享'})

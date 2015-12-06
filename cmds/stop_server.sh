@@ -1,4 +1,4 @@
 #!/bin/sh
 source ./stop_uwsgi.sh uwsgi
-sleep 3
+sleep 1
 source ./stop_nginx.sh

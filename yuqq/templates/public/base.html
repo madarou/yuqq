@@ -8,8 +8,9 @@
 <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet"
 	href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="static/public/css/index.css">
-<link rel="stylesheet" href="static/public/css/base.css">
+	{% load static from staticfiles %}
+<link rel="stylesheet" href="{% static 'public/css/index.css'%}">
+<link rel="stylesheet" href="{% static 'public/css/base.css'%}">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -18,24 +19,27 @@
     <![endif]-->
 </head>
 <body>
-
 	{% block navbar %}
 	<!-- 导航栏 -->
+	<div class="navbar-div">
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
+				<!-- <button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
 					aria-controls="navbar">
 					<span class="sr-only">Toggle navigation</span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/">鱼圈圈水族</a>
+				</button> -->
+				<a class="navbar-brand" href="/">			
+					{% load static from staticfiles %}
+					<img class="brand-img" alt="Brand" src="{% static 'public/img/yqq.png'%}">
+				</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/">首页</a></li>
+					<li><a href="/">首页</a></li>
 					<li class="dropdown"><a id="products"
 						href="{% url 'products'%}" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -49,7 +53,7 @@
 						</ul></li>
 					<li><a href="{% url 'services'%}">服务项目</a></li>
 					<li><a href="{% url 'knowledge'%}">专业知识</a></li>
-					<li><a href="{% url 'message'%}">鱼友分享</a></li>
+					<li><a href="{% url 'share'%}">鱼友分享</a></li>
 					<li><a href="{% url 'aboutme'%}">关于我们</a></li>
 					<li><a href="{% url 'message'%}">在线留言</a></li>
 				</ul>
@@ -65,17 +69,42 @@
 		</div>
 		<!--/.container-fluid -->
 	</nav>
+	</div>
 	<!-- 导航栏 -->
 	{% endblock %}
 	<div class="container">
-		<div style="min-height: 450px">{% block content %} {% endblock
-			%}</div>
+		<div style="min-height: 450px">{% block content %} {% endblock %}</div>
 		{% block footer %}
 		<!-- 页尾 -->
 		<hr>
 		<div class="row alert alert-info" sytle="height:110px">
-			<div class="col-md-6">联系我们：地址，电话，qq,微信</div>
-			<div class="col-md-6">logo，官方微博，官方微信</div>
+			<div class="col-md-8">
+			<h4>联系我们：</h4>
+				<table style="width:100%">
+					<tr>
+						<td><h5>&nbsp;地址: &nbsp;四川省成都市玉林街xxx号</h5></td>
+						<td><h5>电话: &nbsp;18661863775</h5></td>
+					</tr>
+					<tr>
+						<td><h5>&nbsp;QQ: &nbsp;314777268</h5></td>
+						<td><h5>微信: &nbsp;xxxxxx</h5></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-4">
+				<br/>
+				<div class="row">
+					<div class="col-md-4">
+						<a href="http://weibo.com/3977121390" target="_blank"><img style="opacity: 1;" src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuKAKtdAAABNSSItcls708.png" data-src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuKAKtdAAABNSSItcls708.png" class="" title=""></a>
+					</div>
+					<div class="col-md-4">
+						<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=314777268&amp;site=qq&amp;menu=yes" target="_blank"><img style="opacity: 1;" src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuGAavHyAABLylA8z80116.png" data-src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuGAavHyAABLylA8z80116.png" class="" title=""></a>
+					</div>
+					<div class="col-md-4">
+						<a href="http://file.tuweia.cn/M00/3F/24/CoPea1V4BbWANo_VAABETfMsTrk638.jpg" target="_blank"><img style="opacity: 1;" src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuKAUaHQAABM87FjOag076.png" data-src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuKAUaHQAABM87FjOag076.png" class="" title=""></a>
+					</div>
+				</div>
+			</div>
 		</div>
 		<center>
 			<div class="mastfoot">
@@ -101,6 +130,10 @@
 		});
 	</script>
 	<!-- 导航栏下拉 -->
+	<!-- 导航栏active -->
+	<script type="text/javascript">
+	$('ul.nav > li > a[href="' + document.location.pathname + '"]').parent().addClass('active');
+	</script>
 	<!-- 分享到 -->
 	<script>
 		window._bd_share_config = {
