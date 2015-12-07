@@ -11,6 +11,7 @@
 	{% load static from staticfiles %}
 <link rel="stylesheet" href="{% static 'public/css/index.css'%}">
 <link rel="stylesheet" href="{% static 'public/css/base.css'%}">
+<link rel="stylesheet" href="{% static 'public/css/style.css'%}">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -166,6 +167,13 @@
 			0[(getElementsByTagName('head')[0] || body)
 					.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
 					+ ~(-new Date() / 36e5)];
+	</script>
+	
+	<script src="{% static 'public/js/superbox.js'%}"></script>
+	<script>
+	$(function() {
+	    $('.superbox').SuperBox();
+	});
 	</script>
 </body>
 </html>
