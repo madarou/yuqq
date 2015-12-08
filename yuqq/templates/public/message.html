@@ -1,89 +1,27 @@
-{% extends "public/base.html" %} {% block content %} {{message}}
-
-<div class="row">
-	<!--左边栏-->
-	<div class="col-sm-3 well">网友留言</div>
-	<!--右边栏-->
-	<div class="col-sm-9">
-		欢迎为我们留言：
-		<table style="width: 100%;border-spacing:10px">
-			<thead>
-				<tr>
-					<th style="width: 5%"></th>
-					<th style="width: 50%"></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>我的称呼：</td>
-					<td>
-						<div class="input-group">
-							<div class="input-group-btn">
-								<button type="button" class="btn btn-default dropdown-toggle"
-									data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">
-									先生 <span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">先生</a></li>
-									<li><a href="#">女士</a></li>
-								</ul>
-							</div>
-							<!-- /btn-group -->
-							<input type="text" class="form-control" aria-label="...">
-						</div> <!-- /input-group -->
-					</td>
-				</tr>
-				<tr>
-					<td>联系方式：</td>
-					<td>
-						<div class="input-group">
-							<div class="input-group-btn">
-								<button type="button" class="btn btn-default dropdown-toggle"
-									data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">
-									电话 <span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">微信</a></li>
-									<li><a href="#">QQ</a></li>
-									<li><a href="#">邮箱</a></li>
-								</ul>
-							</div>
-							<!-- /btn-group -->
-							<input type="text" class="form-control" aria-label="...">
-						</div> <!-- /input-group -->
-					</td>
-				</tr>
-				<tr>
-					<td>留言信息：</td>
-					<td>
-						<div class="input-group">
-							<div class="input-group-btn">
-								<button type="button" class="btn btn-default dropdown-toggle"
-									data-toggle="dropdown" aria-haspopup="true"
-									aria-expanded="false">
-									咨询 <span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">建议</a></li>
-									<li><a href="#">感谢</a></li>
-									<li><a href="#">投诉</a></li>
-								</ul>
-							</div>
-							<!-- /btn-group -->
-						
-							<textarea rows="2" class="form-control" aria-label="..."></textarea>
-						</div> <!-- /input-group -->
-					</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td style="padding-right:20px" align="right"><button class="btn btn-primary btn-lg">提交</button></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+{% extends "public/base.html" %} {% block content %}
+{% load static from staticfiles %}
+<div class="content">
+  <div class="content_box">
+   
+	<div class="men">
+	 <p>您的咨询、赞赏、建议和意见都是我们进步的动力！</p>
+	   <div class="contact_form">
+	   	  <h2>留言箱</h2>
+	           <form>
+					<div class="row_5">
+                     	<input type="text" class="text" value="称呼" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '称呼';}">
+					 	<input type="text" class="text" value="联系方式" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '联系方式';}" style="margin-left:20px">
+					 	<!-- <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '主题';}" style="margin-left:20px"> -->
+					 	<div class="clearfix"></div>
+					</div>
+					<div class="row_6">
+	                   <textarea value="留言:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '留言:';}">留言:</textarea>
+	                </div>
+	                <div style="text-align:right"><input name="submit" type="submit" id="submit" value="提交"></div>
+			        <div class="clearfix"></div>
+               </form>
+       </div>
+    </div>
+   </div>
 </div>
-
-{% endblock %}
+{% endblock %}	

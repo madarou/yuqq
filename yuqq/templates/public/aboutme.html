@@ -1,14 +1,57 @@
 {% extends "public/base.html" %} {% block content %}
-	{{info}}
 	<!--主体-->
-<div class="row">
-	<!--左边栏-->
-	<div class="col-sm-3 well">
-		左边栏
-	</div>
-	<!--右边栏-->
-	<div class="col-sm-9">
-		<img src="img/cat.jpg" class="img-responsive" />
-	</div>
-</div>
+{% load static from staticfiles %}
+<div class="content">
+  <div class="content_box">
+	<div class="men"> 	
+	 <h1 class="contact_head">关于鱼圈圈</h1>
+	 <div class="contact_box">
+	  <div class="col-sm-12">
+	  	 <address class="addr">
+	 		<p><span style="color:#e05b5b"><strong>成都鱼圈圈水族创意空间</strong></span>是由外部过滤器：外部过滤器又分为外部吊挂式，底部过滤器和浸溢式过滤器等多种形式。外部吊挂式过滤器是将过滤器吊挂在水族箱侧面或下方，水由水泵抽入滤槽，经过滤材过滤后，再从过滤箱底部的出水口流入水族箱中。使用这种过滤器，清洗水族箱等操作方便，但不利于硝化细菌的生长，且冬季加温时热量容易散失，最好与底部过滤器结合使用。</p>
+	 	</address>
+	 	</div>
+	  <div class="col-sm-5 col-sm-offset-2">
+	  	 <address class="addr">
+              <h4>联系方式</h4>
+              <dl style="margin-top:23px">
+                <dt>地址:</dt>
+                <dd>四川省成都市武侯区玉林路xxx号</dd>
+              </dl>
+              <dl>
+                <dt>电话:</dt>
+                <dd>18661863775</dd>
+              </dl>
+              <dl>
+                <dt>QQ:</dt>
+                <dd>314777268</dd>
+              </dl>
+              <dl>
+                <dt>微信:</dt>
+                <dd>鱼圈圈-熊猫</dd>
+              </dl>
+              <dl>
+                <dt>邮箱:</dt>
+                <dd>+1 800 889 9898</dd>
+              </dl>
+              <dl>
+                <dt>官方微博:<a href="/"><img src="{% static 'public/img/weibo-2.png'%}"
+										alt="" /></a></dt>
+                <dd><strong>官方微信:</strong><a href="/"><img src="{% static 'public/img/weixin-2.png'%}"
+										alt="" /></a></dd>
+              </dl>
+           </address>
+	     </div>
+	     <div class="col-sm-5">
+	  	 <address class="addr">
+              <img src="{% static 'public/img/m2.jpg'%}" style="heigt:300px" alt=""/>
+            </address>
+	     </div>
+	     <div class="clearfix"> </div>
+	   </div>
+
+    </div>
+
+   </div>
+</div>	
 {% endblock %}

@@ -1,187 +1,152 @@
 {% extends "public/base.html" %} {% block content %}
-<div id="carousel-example-generic" class="carousel slide"
-	data-ride="carousel">
-	<!-- Indicators -->
-	<ol class="carousel-indicators">
-		<li data-target="#carousel-example-generic" data-slide-to="0"
-			class="active"></li>
-		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-	</ol>
-
-	<!-- Wrapper for slides -->
-	<div class="carousel-inner" role="listbox">
-		<div class="item active">
-			{% load static from staticfiles %} 
-			<img class="carousel-img" src="{% static 'public/img/2.jpg'%}" alt="Hi!"
-				class="img-responsive" />
-			<div class="carousel-caption">
-				<!-- <h3>aaa</h3> -->
-				<p>热带鱼水草生态造景新鲜上市 </p>
-			</div>
-		</div>
-
-		<div class="item">
-			<img class="carousel-img" src="{% static 'public/img/1.jpg'%}" alt="Hi!"
-				class="img-responsive" />
-			<div class="carousel-caption">
-				<!-- <h3>bbb</h3> -->
-				<p>锦鲤到家，年年有鱼 </p>
-			</div>
-		</div>
-		<div class="item">
-			<img class="carousel-img" src="{% static 'public/img/3.png'%}" alt="Hi!"
-				class="img-responsive" />
-			<div class="carousel-caption">
-				<!-- <h3>ccc</h3> -->
-				<p>usb迷你循环缸鱼缸水族箱造景套餐办公室桌面生态缸台灯小型创意 </p>
-			</div>
+{% load static from staticfiles %}
+<div class="grid_1">
+	<div class="col-md-3 banner_left">
+		<img src="{% static 'public/img/xiaochouyu.png'%}" class="img-responsive"
+			alt="" />
+		<div class="banner_desc">
+			<h1><a href="{% url 'detail'%}" style="color:#e05b5b">小丑鱼</a></h1>
+			<h2>——热带海洋的小伙伴</h2>
+			<h5>
+				￥125 <small>Only</small>
+			</h5>
+			<a href="#" class="btn1 btn4 btn-1 btn1-1b">求包养</a>
 		</div>
 	</div>
-	<!-- Controls -->
-	<!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a> -->
+	<div class="col-md-9 banner_right">
+		<!-- FlexSlider -->
+		<section class="slider">
+			<div class="flexslider">
+				<ul class="slides">
+					<li><a href="{% url 'detail'%}"><img src="{% static 'public/img/dabai.jpg'%}" alt="" /></a></li>
+					<li><a href="{% url 'detail'%}"><img src="{% static 'public/img/jinli.png'%}" alt="" /></a></li>
+				</ul>
+			</div>
+		</section>
+		<!-- FlexSlider -->
+	</div>
+	<div class="clearfix"></div>
 </div>
-<br/>
-<div class="alert alert-success" role="alert">...</div>
-<!-- 商品分类 -->
-<div class="row">
-	<div class="col-sm-6 col-md-3">
-		<div class="thumbnail">
-			<img src="{% static 'public/img/products.jpg'%}" alt="...">
-			<div class="caption">
-				<h3>鱼类销售</h3>
-				<p>...</p>
-				<p>
-					<a href="#" class="btn btn-primary" role="button">Button</a> <a
-						href="#" class="btn btn-default" role="button">Button</a>
-				</p>
+<div class="content">
+	<div class="content_box">
+		<ul class="grid_2">
+			<a href="{% url 'detail'%}"><li><img
+					src="{% static 'public/img/pic2.png'%}" class="img-responsive"
+					alt="" /> <span class="btn5">888</span>
+					<p>血红鹦鹉</p></li></a>
+			<a href="{% url 'detail'%}"><li><img
+					src="{% static 'public/img/pic3.png'%}" class="img-responsive"
+					alt="" /> <span class="btn5">888</span>
+					<p>剑尾鱼</p></li></a>
+			<a href="{% url 'detail'%}"><li><img
+					src="{% static 'public/img/pic4.png'%}" class="img-responsive"
+					alt="" /> <span class="btn5">888</span>
+					<p>罗汉鱼</p></li></a>
+			<a href="{% url 'detail'%}"><li><img
+					src="{% static 'public/img/pic5.png'%}" class="img-responsive"
+					alt="" /> <span class="btn5">888</span>
+					<p>宝莲灯</p></li></a>
+			<a href="{% url 'detail'%}"><li class="last1"><img
+					src="{% static 'public/img/pic6.png'%}" class="img-responsive"
+					alt="" /> <span class="btn5">888</span>
+					<p>孔雀鱼</p></li></a>
+			<div class="clearfix"></div>
+		</ul>
+		<div class="grid_3">
+			<div class="col-md-6 box_2">
+				<div class="section_group">
+					<div class="col_1_of_2 span_1_of_2">
+						<a href="{% url 'detail'%}"><img src="{% static 'public/img/lvju.png'%}"
+							class="img-responsive" alt="" /></a>
+					</div>
+					<div class="col_1_of_2 span_1_of_2">
+						<a href="{% url 'detail'%}"><img src="{% static 'public/img/xiaoyuanye.png'%}"
+							class="img-responsive" alt="" /></a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
 			</div>
-		</div>
-	</div>
-	<div class="col-sm-6 col-md-3">
-		<div class="thumbnail">
-			<img src="{% static 'public/img/products.jpg'%}" alt="...">
-			<div class="caption">
-				<h3>水族造景</h3>
-				<p>...</p>
-				<p>
-					<a href="#" class="btn btn-primary" role="button">Button</a> <a
-						href="#" class="btn btn-default" role="button">Button</a>
-				</p>
+			<div class="col-md-6">
+				<div class="box_3">
+					<div class="col_1_of_2 span_1_of_2 span_3">
+						<h3><a href="{% url 'detail'%}" style="color:#e05b5b">单弧靠墙鱼缸 隔断屏风</a></h3>
+						<h4>$156</h4>
+						<h5>让墙面活起来.</h5>
+						<a href="#" class="btn1 btn6 btn-1 btn1-1b">带走</a>
+					</div>
+					<div class="col_1_of_2 span_1_of_2 span_4">
+						<div class="span_5">
+							<img src="{% static 'public/img/yugang.png'%}"
+								class="img-responsive" alt="" />
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
 			</div>
+			<div class="clearfix"></div>
 		</div>
-	</div>
-	<div class="col-sm-6 col-md-3">
-		<div class="thumbnail">
-			<img src="{% static 'public/img/products.jpg'%}" alt="...">
-			<div class="caption">
-				<h3>水族器材</h3>
-				<p>...</p>
-				<p>
-					<a href="#" class="btn btn-primary" role="button">Button</a> <a
-						href="#" class="btn btn-default" role="button">Button</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-6 col-md-3">
-		<div class="thumbnail">
-			<img src="{% static 'public/img/products.jpg'%}" alt="...">
-			<div class="caption">
-				<h3>水生生物</h3>
-				<p>...</p>
-				<p>
-					<a href="#" class="btn btn-primary" role="button">Button</a> <a
-						href="#" class="btn btn-default" role="button">Button</a>
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- 新闻动态 专业知识 -->
-<div class="row">
+		<!-- 新闻动态 专业知识 -->
+<div class="row" style="margin-right:0px;margin-left:0px">
 	<div class="col-md-6 col-md-offset-0">
-		<div class="panel panel-success">
-			<div class="panel-heading">
+		<div class="panel" style="border-color: #15BE74;border-radius: 0px;">
+			<div class="panel-heading" style="background-color: #15BE74;border-color: #15BE74;">
 				<h3 class="panel-title">新闻动态</h3>
 			</div>
 			<div class="panel-body">
-				<div class="media">
-					<div class="media-left media-top">
-						<a href="#"> <img class="media-object"
+				<div class="row">
+					<div class="col-sm-2"><a href="#"> <img class="media-object"
 							src="{% static 'public/img/news.jpg'%}" alt="...">
-						</a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">Middle aligned media</h4>
+						</a></div>
+					<div class="col-sm-10"><h4 class="media-heading">Middle aligned media</h4>
 						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
 						scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
 						in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-					</div>
-				</div>
-				<div class="media">
-					<div class="media-left media-top">
-						<a href="#"> <img class="media-object"
+						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
+				</div><br>
+				<div class="row">
+					<div class="col-sm-2"><a href="#"> <img class="media-object"
 							src="{% static 'public/img/news.jpg'%}" alt="...">
-						</a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">Middle aligned media</h4>
+						</a></div>
+					<div class="col-sm-10"><h4 class="media-heading">Middle aligned media</h4>
 						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
 						scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
 						in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-					</div>
+						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="col-md-6">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">专业常识</h3>
+		<div class="panel" style="border-color: #e05b5b;border-radius: 0px;">
+			<div class="panel-heading" style="background-color:#e05b5b;border-color:#e05b5b;">
+				<h3 class="panel-title">专业知识</h3>
 			</div>
 			<div class="panel-body">
-				<div class="media">
-					<div class="media-left media-top">
-						<a href="#"> <img class="media-object"
+				<div class="row">
+					<div class="col-sm-2"><a href="#"> <img class="media-object"
 							src="{% static 'public/img/news.jpg'%}" alt="...">
-						</a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">Middle aligned media</h4>
+						</a></div>
+					<div class="col-sm-10"><h4 class="media-heading">Middle aligned media</h4>
 						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
 						scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
 						in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-					</div>
-				</div>
-				<div class="media">
-					<div class="media-left media-top">
-						<a href="#"> <img class="media-object"
+						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
+				</div><br>
+				<div class="row">
+					<div class="col-sm-2"><a href="#"> <img class="media-object"
 							src="{% static 'public/img/news.jpg'%}" alt="...">
-						</a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading">Middle aligned media</h4>
+						</a></div>
+					<div class="col-sm-10"><h4 class="media-heading">Middle aligned media</h4>
 						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
 						scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum
 						in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-					</div>
+						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+	</div>
+</div>
 {% endblock %}

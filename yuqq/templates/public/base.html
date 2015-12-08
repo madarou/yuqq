@@ -1,179 +1,258 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>鱼圈圈</title>
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet"
-	href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	{% load static from staticfiles %}
-<link rel="stylesheet" href="{% static 'public/css/index.css'%}">
-<link rel="stylesheet" href="{% static 'public/css/base.css'%}">
-<link rel="stylesheet" href="{% static 'public/css/style.css'%}">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="Lookz Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript">
+	
+	
+	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
+</script>
+{% load static from staticfiles %}
+<link href="{% static 'public/css/bootstrap.css'%}" rel='stylesheet'
+	type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="{% static 'public/css/style.css'%}" rel='stylesheet'
+	type='text/css' />
+<!-- Custom Theme files -->
+<!--webfont-->
+<link
+	href='http://fonts.useso.com/css?family=Raleway:100,200,300,400,500,600,700,800,900'
+	rel='stylesheet' type='text/css'>
+<script type="text/javascript"
+	src="{% static 'public/js/jquery-1.11.1.min.js'%}"></script>
+<!-- start menu -->
+<link href="{% static 'public/css/megamenu.css'%}" rel="stylesheet"
+	type="text/css" media="all" />
+<link href="{% static 'public/css/flexslider.css'%}" rel='stylesheet'
+		type='text/css' />
+<script type="text/javascript" src="{% static 'public/js/megamenu.js'%}"></script>
+<script>
+	$(document).ready(function() {
+		$(".megamenu").megamenu();
+	});
+</script>
 </head>
 <body>
-	{% block navbar %}
-	<!-- 导航栏 -->
-	<div class="navbar-div">
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<!-- <button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button> -->
-				<a class="navbar-brand" href="/">			
-					{% load static from staticfiles %}
-					<img class="brand-img" alt="Brand" src="{% static 'public/img/yqq.png'%}">
-				</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="/">首页</a></li>
-					<li class="dropdown"><a id="products"
-						href="{% url 'products'%}" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">热销商品 <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="{% url 'products'%}">鱼</a></li>
-							<li><a href="{% url 'products'%}">鱼缸</a></li>
-							<li><a href="{% url 'products'%}">水生植物</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="{% url 'products'%}">其他</a></li>
-						</ul></li>
-					<li><a href="{% url 'services'%}">服务项目</a></li>
-					<li><a href="{% url 'knowledge'%}">专业知识</a></li>
-					<li><a href="{% url 'share'%}">鱼友分享</a></li>
-					<li><a href="{% url 'aboutme'%}">关于我们</a></li>
-					<li><a href="{% url 'message'%}">在线留言</a></li>
-				</ul>
-				<form class="navbar-form navbar-right" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search..">
+	<div class="wrap">
+		<div class="container">
+			{% block header %}
+			<div class="header_top">
+				<div class="col-sm-9 h_menu4">
+					<ul class="megamenu skyblue">
+						<li class="grid"><a class="color8" href="/">首页</a></li>
+						<li><a class="color1" href="{% url 'products'%}">热销商品</a>
+							<div class="megapanel">
+								<div class="row">
+									<div class="col1">
+										<div class="h_nav">
+											<h5><a href="{% url 'products'%}">水生生物</a></h5>
+											<ul>
+												<li><a href="{% url 'products'%}">淡水鱼</a></li>
+												<li><a href="{% url 'products'%}">热带鱼</a></li>
+												<li><a href="{% url 'products'%}">乌龟</a></li>
+												<li><a href="{% url 'products'%}">水草</a></li>
+												<li><a href="{% url 'products'%}">贝类</a></li>
+												<li><a href="{% url 'products'%}">更多...</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col1">
+										<div class="h_nav">
+											<h5><a href="{% url 'products'%}">水族设备</a></h5>
+											<ul>
+												<li><a href="{% url 'products'%}">鱼缸</a></li>
+												<li><a href="{% url 'products'%}">水泵</a></li>
+												<li><a href="{% url 'products'%}">加热器</a></li>
+												<li><a href="{% url 'products'%}">水温计</a></li>
+												<li><a href="{% url 'products'%}">过滤器</a></li>
+												<li><a href="{% url 'products'%}">照明设备</a></li>
+												<li><a href="{% url 'products'%}">捞鱼网</a></li>
+												<li><a href="{% url 'products'%}">喂食器</a></li>
+												<li><a href="{% url 'products'%}">储水器</a></li>
+												<li><a href="{% url 'products'%}">更多...</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col1">
+										<div class="h_nav">
+											<h5><a href="{% url 'products'%}">饲料及其他</a></h5>
+											<ul>
+												<li><a href="{% url 'products'%}">淡水鱼饲料</a></li>
+												<li><a href="{% url 'products'%}">热带鱼饲料</a></li>
+												<li><a href="{% url 'products'%}">锦鲤饲料</a></li>
+												<li><a href="{% url 'products'%}">珊瑚石</a></li>
+												<li><a href="{% url 'products'%}">活碳粉</a></li>
+												<li><a href="{% url 'products'%}">更多...</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div></li>
+						<li class="grid"><a class="color2" href="{% url 'services'%}">服务项目</a>
+							<div class="megapanel">
+								<div class="row">
+									<div class="col1">
+										<div class="h_nav">
+											<h5><a href="{% url 'services'%}">水族造景</a></h5>
+										</div>
+									</div>
+									<div class="col1">
+										<div class="h_nav">
+											<h5><a href="{% url 'services'%}">生态养护</a></h5>
+										</div>
+									</div>
+									<div class="col1">
+										<div class="h_nav">
+											<h5><a href="{% url 'services'%}">鱼缸清洗</a></h5>
+										</div>
+									</div>
+								</div>
+							</div></li>
+						<li><a class="color3" href="{% url 'knowledge'%}">专业知识</a></li>
+						<li><a class="color4" href="{% url 'share'%}">圈友分享</a></li>
+						<li><a class="color5" href="{% url 'aboutme'%}">关于我们</a></li>
+						<li><a class="color6" href="{% url 'message'%}">在线留言</a></li>
+					</ul>
+				</div>
+				<!-- <div class="col-sm-3 header-top-right">
+					<div class="drop_buttons">
+						<select class="drop-down ">
+							<option value="1">Dollar</option>
+							<option value="2">Euro</option>
+						</select> <select class="drop-down drop-down-in">
+							<option value="1">English</option>
+							<option value="2">French</option>
+							<option value="3">German</option>
+						</select>
+						<div class="clearfix"></div>
 					</div>
-					<button type="submit" class="btn btn-default">搜索</button>
-				</form>
-
-			</div>
-			<!--/.nav-collapse -->
-		</div>
-		<!--/.container-fluid -->
-	</nav>
-	</div>
-	<!-- 导航栏 -->
-	{% endblock %}
-	<div class="container">
-		<div style="min-height: 450px">{% block content %} {% endblock %}</div>
-		{% block footer %}
-		<!-- 页尾 -->
-		<hr>
-		<div class="row alert alert-info" sytle="height:110px">
-			<div class="col-md-8">
-			<h4>联系我们：</h4>
-				<table style="width:100%">
-					<tr>
-						<td><h5>&nbsp;地址: &nbsp;四川省成都市玉林街xxx号</h5></td>
-						<td><h5>电话: &nbsp;18661863775</h5></td>
-					</tr>
-					<tr>
-						<td><h5>&nbsp;QQ: &nbsp;314777268</h5></td>
-						<td><h5>微信: &nbsp;xxxxxx</h5></td>
-					</tr>
-				</table>
-			</div>
-			<div class="col-md-4">
-				<br/>
-				<div class="row">
-					<div class="col-md-4">
-						<a href="http://weibo.com/3977121390" target="_blank"><img style="opacity: 1;" src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuKAKtdAAABNSSItcls708.png" data-src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuKAKtdAAABNSSItcls708.png" class="" title=""></a>
+					<div class="register-info">
+						<ul>
+							<li><a href="login.html">Login</a></li>
+						</ul>
 					</div>
-					<div class="col-md-4">
-						<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=314777268&amp;site=qq&amp;menu=yes" target="_blank"><img style="opacity: 1;" src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuGAavHyAABLylA8z80116.png" data-src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuGAavHyAABLylA8z80116.png" class="" title=""></a>
+					<div class="clearfix"></div>
+				</div> -->
+				<div class="clearfix"></div>
+			</div>
+			<div class="copyrights">
+				Collect from <a href="http://www.mycodes.net/" target="_blank">源码之家</a>
+			</div>
+			<div class="header_bootm">
+				<div class="col-sm-4 span_1">
+					<div class="logo">
+						<a href="/"><img src="{% static 'public/img/yqq-logo.png'%}"
+							alt="" /></a>
 					</div>
-					<div class="col-md-4">
-						<a href="http://file.tuweia.cn/M00/3F/24/CoPea1V4BbWANo_VAABETfMsTrk638.jpg" target="_blank"><img style="opacity: 1;" src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuKAUaHQAABM87FjOag076.png" data-src="http://file.tuweia.cn/M00/34/7F/CoPea1UmDuKAUaHQAABM87FjOag076.png" class="" title=""></a>
+				</div>
+				<div class="col-sm-8 row_2">
+					<div class="header_bottom_right row" align="right">
+						<!-- <div class="search">
+							<input type="text" value="Your email address"
+								onFocus="this.value = '';"
+								onBlur="if (this.value == '') {this.value = 'Your email address';}">
+							<input type="submit" value="">
+						</div>
+						<ul class="bag">
+							<a href="cart.html"><i class="bag_left"> </i></a>
+							<a href="cart.html"><li class="bag_right"><p>205.00
+										$</p></li></a>
+							<div class="clearfix"></div>
+						</ul> -->
+						<div class="col-sm-offset-2 col-sm-4">
+							<img src="{% static 'public/img/telephone-logo.png'%}" alt="" />
+							18661863775
+						</div>
+						<div class="col-sm-3">
+							<img src="{% static 'public/img/qq-logo.png'%}" alt="" />
+							314777268
+						</div>
+						<div class="col-sm-3">
+							<img src="{% static 'public/img/weixin-logo.png'%}" alt="" />
+							鱼圈圈-熊猫
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			{% endblock %} {% block content %} {% endblock %} {% block footer %}
+			<div class="content">
+				<div class="content-box">
+					<div class="footer_top">
+						
+						<!-- start span_of_2 -->
+						<div class="span_of_2">
+							<div class="span1_of_2">
+								<h5>友情链接</h5> 
+								<div >
+									<p><a href="http://bbs.cnfish.com/forum.php">观赏鱼之家<span> &gt;</span></a></p>
+								</div>
+							</div>
+							<div class="span1_of_2">
+								<h5>联系我们</h5>
+								<div >
+									<p>地址: 四川省成都市武侯区玉林路xxx号</p>
+									<p>电话: 18661863775</p>
+									<p>QQ: 314777268</p>
+								</div>
+							</div>
+							<div class="span1_of_2">
+								<h5>关注我们</h5>
+								<div class="social-icons">
+									<!-- <ul>
+										<li><a href="#" target="_blank"></a></li>
+										<li><a href="#" target="_blank"></a></li>
+										<li><a href="#" target="_blank"></a></li>
+										<li><a href="#" target="_blank"></a></li>
+										<li class="last2"><a href="#" target="_blank"></a></li>
+									</ul> -->
+									<a href="/"><img src="{% static 'public/img/weibo-2.png'%}"
+										alt="" /></a>
+									<a href="/"><img src="{% static 'public/img/weixin-2.png'%}"
+										alt="" /></a>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="copy">
+							<p>
+								Copyright &copy; 2015 成都鱼圈圈水族创意空间 All rights reserved.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<center>
-			<div class="mastfoot">
-				<span class="copy">© 2015 成都鱼圈圈水族. All rights reserved.</span>
-			</div>
-		</center>
-		{% endblock %}
 	</div>
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<!-- 导航栏下拉 -->
+	{% endblock %}
+	<script defer src="{% static 'public/js/jquery.flexslider.js'%}"></script>
 	<script type="text/javascript">
-		$('li.dropdown').mouseover(function() {
-			$(this).addClass('open');
-		}).mouseout(function() {
-			$(this).removeClass('open');
+		$(function() {
+			SyntaxHighlighter.all();
+		});
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				animation : "slide",
+				start : function(slider) {
+					$('body').removeClass('loading');
+				}
+			});
 		});
 	</script>
-	<script type="text/javascript">
-		$('#products').click(function() {
-			self.location = '/products';
-		});
-	</script>
-	<!-- 导航栏下拉 -->
+
 	<!-- 导航栏active -->
 	<script type="text/javascript">
-	$('ul.nav > li > a[href="' + document.location.pathname + '"]').parent().addClass('active');
-	</script>
-	<!-- 分享到 -->
-	<script>
-		window._bd_share_config = {
-			"common" : {
-				"bdSnsKey" : {},
-				"bdText" : "",
-				"bdMini" : "2",
-				"bdMiniList" : false,
-				"bdPic" : "",
-				"bdStyle" : "0",
-				"bdSize" : "16"
-			},
-			"slide" : {
-				"type" : "slide",
-				"bdImg" : "2",
-				"bdPos" : "right",
-				"bdTop" : "100"
-			},
-			"image" : {
-				"viewList" : [ "qzone", "tsina", "weixin" ],
-				"viewText" : "分享到：",
-				"viewSize" : "32"
-			},
-			"selectShare" : {
-				"bdContainerClass" : null,
-				"bdSelectMiniList" : [ "qzone", "tsina", "weixin" ]
-			}
-		};
-		with (document)
-			0[(getElementsByTagName('head')[0] || body)
-					.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
-					+ ~(-new Date() / 36e5)];
-	</script>
-	
-	<script src="{% static 'public/js/superbox.js'%}"></script>
-	<script>
-	$(function() {
-	    $('.superbox').SuperBox();
-	});
+		$('ul.megamenu > li > a[href="' + document.location.pathname + '"]')
+				.parent().addClass('active');
 	</script>
 </body>
 </html>

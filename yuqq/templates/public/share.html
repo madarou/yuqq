@@ -1,76 +1,149 @@
-{% extends "public/base.html" %} {% block content %} {{share}} 
+{% extends "public/base.html" %} {% block content %}
 {% load static from staticfiles %}
-<div class="row">
-	<div class="col-sm-3 well">左边栏</div>
-	<div class="col-sm-9">
-		<div class="wrapper">
-			<!-- SuperBox -->
-			<div class="superbox">
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-1.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-1.jpg'%}"
-						alt="" class="superbox-img">
+<style>
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.center {
+	width: 450px;
+	height: 450px;
+	background: #999;
+	margin: 40px auto 40px auto;
+}
+
+.center img {
+	float: left;
+	width: 150px;
+	height: 150px;
+	cursor: pointer;
+}
+
+.popup {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.4);
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: none;
+}
+
+.picbox {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: 75px;
+	display: none;
+}
+
+.big {
+	width: 300px;
+	height: 300px;
+}
+
+.left {
+	position: absolute;
+	top: 125px;
+	left: -50px;
+	cursor: pointer;
+}
+
+.right {
+	position: absolute;
+	top: 125px;
+	right: -50px;
+	cursor: pointer;
+}
+</style>
+<div class="content">
+	<div class="content_box">
+		<div class="men">
+			<div class="col-md-3 sidebar">
+				<div class="block block-layered-nav">
+					<div class="block-title">
+		        		<strong><span>左边栏</span></strong>
+		    		</div>
+		    		<div class="block-content">
+						<dl id="narrow-by-list">
+							<dt class="odd">我在哪</dt>
+							<dd class="odd">
+								<ol>
+									<li><a href="#"><span class="price1">我在客厅</span></a> (4)</li>
+									<li><a href="#"><span class="price1">我在办公室</span></a> (4)</li>
+									<li><a href="#"><span class="price1">我在宿舍</span></a> (1)</li>
+									<li><a href="#"><span class="price1">我在大堂</span></a> (1)</li>
+									<li><a href="#"><span class="price1">我在卧室</span></a> (1)</li>
+								</ol>
+							</dd>
+						</dl>
+					</div>
 				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-2.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-2.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-3.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-3.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-4.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-4.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-5.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-5.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-6.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-6.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-7.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-7.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-8.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-8.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-9.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-9.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-10.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-10.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-11.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-11.jpg'%}"
-						alt="" class="superbox-img">
-				</div>
-				<div class="superbox-list">
-					<img src="{% static 'public/img/superbox/superbox-thumb-12.jpg'%}"
-						data-img="{% static 'public/img/superbox/superbox-full-12.jpg'%}"
-						alt="" class="superbox-img">
+			</div>
+			<div class="col-md-9 box_3">
+				<div class="center">
+					<img src="{% static 'public/img/big_1.jpg'%}" /> <img
+						src="{% static 'public/img/big_2.jpg'%}" /> <img
+						src="{% static 'public/img/big_3.jpg'%}" /> <img
+						src="{% static 'public/img/big_4.jpg'%}" /> <img
+						src="{% static 'public/img/big_5.jpg'%}" /> <img
+						src="{% static 'public/img/big_6.jpg'%}" /> <img
+						src="{% static 'public/img/big_7.jpg'%}" /> <img
+						src="{% static 'public/img/big_8.jpg'%}" /> <img
+						src="{% static 'public/img/big_9.jpg'%}" />
 				</div>
 
-				<div class="superbox-float"></div>
+				<div class="popup"></div>
+
+				<div class="picbox">
+					<img class="big" src="{% static 'public/img/big_1.jpg'%}" /> <img
+						class="left" src="{% static 'public/img/left.png'%}" /> <img
+						class="right" src="{% static 'public/img/right.png'%}" />
+				</div>
 			</div>
-			<!-- /SuperBox -->
+			<div class="clearfix"> </div>
 		</div>
 	</div>
 </div>
+<!-- <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> -->
+<script type="text/javascript">
+	$(function() {
+		var bigImg = '';
+		var _index = 0;
+		$(".popup").click(function() {
+			$(".picbox").hide();
+			$(this).hide();
+		});
+		$(".center img").click(function() {
+			$(".popup").show();
+			$(".picbox").show();
+			bigImg = $(this).attr("src");//获取点击图片的地址
+			//alert(bigImg);
+			$(".picbox img.big").attr("src", bigImg); //更换大图的图片地址
+			_index = $(this).index();//保存图片的序列号
+			//alert(_index);
+		});
+		$(".right").click(function() {
+			_index++; //序列号加1 _index+1
+			if (_index > 8) {
+				_index = 0
+			}
+			;
+			bigImg = $(".center img").eq(_index).attr("src");
+			$(".picbox img.big").attr("src", bigImg);
+		});
+		$(".left").click(function() {
+			_index--; //序列号加1 _index+1
+			if (_index < -1) {
+				_index = 8
+			}
+			;
+			bigImg = $(".center img").eq(_index).attr("src");
+			$(".picbox img.big").attr("src", bigImg);
+		});
+	})
+</script>
 {% endblock %}

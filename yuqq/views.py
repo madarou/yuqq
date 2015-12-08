@@ -23,3 +23,6 @@ def knowledge(request):
 
 def share(request):
     return render_to_response('public/share.html',{'share':'分享'})
+
+def detail(request):
+    return render_to_response('public/detail.html',{'detail':'详细'})
