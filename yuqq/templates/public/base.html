@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Home</title>
+<title>鱼圈圈水族</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords"
@@ -10,7 +10,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript">
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 </script>
@@ -28,21 +30,136 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	rel='stylesheet' type='text/css'>
 <script type="text/javascript"
 	src="{% static 'public/js/jquery-1.11.1.min.js'%}"></script>
+<script type="text/javascript"
+	src="{% static 'public/js/bootstrap.min.js'%}"></script>
 <!-- start menu -->
 <link href="{% static 'public/css/megamenu.css'%}" rel="stylesheet"
 	type="text/css" media="all" />
 <link href="{% static 'public/css/flexslider.css'%}" rel='stylesheet'
-		type='text/css' />
+	type='text/css' />
 <script type="text/javascript" src="{% static 'public/js/megamenu.js'%}"></script>
 <script>
 	$(document).ready(function() {
 		$(".megamenu").megamenu();
 	});
 </script>
+<!-- 弹出框 -->
+<script type="text/javascript">
+	$(function() {
+		$(".popup-bg").click(function() {
+			$(".buybox").hide();
+			$(this).hide();
+		});
+		$(".buy").click(function() {
+			center($(".buybox"));
+			$(".popup-bg").show();
+			$(".buybox").show();
+		});
+		function center(obj) {
+			var screenWidth = $(window).width(), screenHeight = $(window)
+					.height(); //当前浏览器窗口的 宽高
+			var scrolltop = $(document).scrollTop();//获取当前窗口距离页面顶部高度
+			var objLeft = (screenWidth - obj.width()) / 2;
+			var objTop = (screenHeight - obj.height()) / 2 + scrolltop;
+			obj.css({
+				left : objLeft + 'px',
+				top : objTop + 'px',
+				'display' : 'block'
+			});
+		}
+	})
+</script>
 </head>
 <body>
 	<div class="wrap">
 		<div class="container">
+			<!-- 弹出框 -->
+			<div class="popup-bg"></div>
+			<div class="buybox">
+				<div class="register">
+					<form>
+						<div class="register-top-grid">
+							<h4>商品信息：</h4>
+							<div class="row" style="width: 100%">
+								<div class="col-sm-6">
+									<span><label>名称：</label>血色鹦鹉</span>
+								</div>
+								<div class="col-sm-6">
+									<span><label>数量：</label> <select>
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+											<option value="">4</option>
+									</select> </span>
+								</div>
+							</div>
+							<div class="row" style="width: 100%">
+								<div class="col-sm-12">
+									<div style="width: 100%">
+										<span>备注：</span> <input type="text">
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</form>
+					<ul id="myTab" class="nav nav-tabs" style="margin-top:7em">
+							<li class="active"><a href="#self" data-toggle="tab">
+									预订自取</a></li>
+							<li><a href="#send" data-toggle="tab">送货上门</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane fade in active" id="self">
+										<div class="register-bottom-grid">
+											<h4>预订信息：</h4>
+											<div style="width: 31%">
+												<span><label>称呼*</label></span> <input type="text">
+											</div>
+											<div style="width: 31%">
+												<span><label>取货日期*</label></span> <input type="text">
+											</div>
+											<div style="width: 31%">
+												<span><label>联系方式*</label></span> <input type="text">
+											</div><br>
+											<div><p class="m_text2" style="color:red">下单后，我们会有工作人员根据您留下的联系方式与您确认订单(推荐使用<strong>手机</strong>或<strong>微信</strong>)</p></div>
+											<br>
+											<div><p class="m_text2">实体店取货地址：成都市武侯区玉林路xxx号(<a href="{% url 'aboutme'%}">查看详细地址</a>)</p></div>
+											<div class="clearfix"></div>
+										</div>
+								  
+							</div>
+							
+								<div class="tab-pane fade" id="send">
+									<div class="register-bottom-grid">
+										<h4>配送信息：</h4>
+										<div style="width: 31%">
+											<span><label>称呼*</label></span> <input type="text">
+										</div>
+										<div style="width: 31%">
+											<span><label>配送日期*</label></span> <input type="text">
+										</div>
+										<div style="width: 31%">
+											<span><label>联系方式*</label></span> <input type="text">
+										</div>
+										<br>
+										<div style="width: 96%">
+											<span>配送地址<label>*</label></span> <input type="text">
+										</div>
+										<br>
+										<div><p class="m_text2" style="color:red">下单后，我们会有工作人员根据您留下的联系方式与您确认订单(推荐使用<strong>手机</strong>或<strong>微信</strong>)</p></div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+						</div>
+					<div class="clearfix"></div>
+					<div class="register-but">
+						<form>
+							<input type="submit" value="确认">
+							<div class="clearfix"></div>
+						</form>
+					</div>
+				</div>
+			</div>
 			{% block header %}
 			<div class="header_top">
 				<div class="col-sm-9 h_menu4">
@@ -53,7 +170,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="row">
 									<div class="col1">
 										<div class="h_nav">
-											<h5><a href="{% url 'products'%}">水生生物</a></h5>
+											<h5>
+												<a href="{% url 'products'%}">水生生物</a>
+											</h5>
 											<ul>
 												<li><a href="{% url 'products'%}">淡水鱼</a></li>
 												<li><a href="{% url 'products'%}">热带鱼</a></li>
@@ -66,7 +185,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="col1">
 										<div class="h_nav">
-											<h5><a href="{% url 'products'%}">水族设备</a></h5>
+											<h5>
+												<a href="{% url 'products'%}">水族设备</a>
+											</h5>
 											<ul>
 												<li><a href="{% url 'products'%}">鱼缸</a></li>
 												<li><a href="{% url 'products'%}">水泵</a></li>
@@ -83,7 +204,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="col1">
 										<div class="h_nav">
-											<h5><a href="{% url 'products'%}">饲料及其他</a></h5>
+											<h5>
+												<a href="{% url 'products'%}">饲料及其他</a>
+											</h5>
 											<ul>
 												<li><a href="{% url 'products'%}">淡水鱼饲料</a></li>
 												<li><a href="{% url 'products'%}">热带鱼饲料</a></li>
@@ -101,17 +224,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="row">
 									<div class="col1">
 										<div class="h_nav">
-											<h5><a href="{% url 'services'%}">水族造景</a></h5>
+											<h5>
+												<a href="{% url 'services'%}">水族造景</a>
+											</h5>
 										</div>
 									</div>
 									<div class="col1">
 										<div class="h_nav">
-											<h5><a href="{% url 'services'%}">生态养护</a></h5>
+											<h5>
+												<a href="{% url 'services'%}">生态养护</a>
+											</h5>
 										</div>
 									</div>
 									<div class="col1">
 										<div class="h_nav">
-											<h5><a href="{% url 'services'%}">鱼缸清洗</a></h5>
+											<h5>
+												<a href="{% url 'services'%}">鱼缸清洗</a>
+											</h5>
 										</div>
 									</div>
 								</div>
@@ -188,18 +317,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="content">
 				<div class="content-box">
 					<div class="footer_top">
-						
+
 						<!-- start span_of_2 -->
 						<div class="span_of_2">
 							<div class="span1_of_2">
-								<h5>友情链接</h5> 
-								<div >
-									<p><a href="http://bbs.cnfish.com/forum.php">观赏鱼之家<span> &gt;</span></a></p>
+								<h5>友情链接</h5>
+								<div>
+									<p>
+										<a href="http://bbs.cnfish.com/forum.php">观赏鱼之家<span>
+												&gt;</span></a>
+									</p>
 								</div>
 							</div>
 							<div class="span1_of_2">
 								<h5>联系我们</h5>
-								<div >
+								<div>
 									<p>地址: 四川省成都市武侯区玉林路xxx号</p>
 									<p>电话: 18661863775</p>
 									<p>QQ: 314777268</p>
@@ -216,17 +348,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<li class="last2"><a href="#" target="_blank"></a></li>
 									</ul> -->
 									<a href="/"><img src="{% static 'public/img/weibo-2.png'%}"
-										alt="" /></a>
-									<a href="/"><img src="{% static 'public/img/weixin-2.png'%}"
-										alt="" /></a>
+										alt="" /></a> <a href="/"><img
+										src="{% static 'public/img/weixin-2.png'%}" alt="" /></a>
 								</div>
 							</div>
 							<div class="clearfix"></div>
 						</div>
 						<div class="copy">
-							<p>
-								Copyright &copy; 2015 成都鱼圈圈水族创意空间 All rights reserved.
-							</p>
+							<p>Copyright &copy; 2015 成都鱼圈圈水族创意空间 All rights reserved.</p>
 						</div>
 					</div>
 				</div>
