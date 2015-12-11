@@ -42,7 +42,7 @@ html[xmlns] .slides {display: block;}
 .flexslider .slides {zoom: 1;}
 .carousel li {margin-right: 5px}
 /* Direction Nav */
-.flex-direction-nav a {display:none; width: 34px; height: 48px; margin: -20px 0 0; display: block; background: url(../img/arrows.png) no-repeat 0 0; position: absolute; top:46%; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
+.flex-direction-nav a {display:none; width: 34px; height: 48px; margin: -20px 0 0; display: block; /* background: url(../img/arrows.png) no-repeat 0 0; */ position: absolute; top:46%; cursor: pointer; text-indent: -9999px; opacity: 0; -webkit-transition: all .3s ease;}
 .flex-direction-nav .flex-next {background-position: 100% 0; right:0px; }
 .flex-direction-nav .flex-prev {left: 0px;}
 .flexslider:hover .flex-next {opacity: 0.8; right: 0px;}

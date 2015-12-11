@@ -1,6 +1,50 @@
 {% extends "public/base.html" %} {% block content %} {% load static from staticfiles %}
+<script type="text/javascript">
+	var products_server={{ Products|safe}};
+	console.log(JSON.stringify(products_server));
+</script>
+<script type="text/javascript" src="{% static 'public/js/products.js'%}"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($){
+				var products = new Products();
+				products.showItems($('#productlist'));
+				
+				//set select selected
+				var url=window.location.href;
+				var from = url.indexOf('products')+9;
+				var arr = url.substring(from).split('/')
+				arr.splice($.inArray('',arr),1); 
+				arr.splice($.inArray('none',arr),1); 
+				console.log(arr[0]);
+				var creatureGroup=new Array('creature','redaiyu','danshuiyu','shuicao','wugui','beilei','cre_other');
+				var equipmentGroup=new Array('equipment','yugang','shuibeng','jiareqi','guolvqi','shuiwenji','equ_other');
+				var otherGroup=new Array('other','dsy_sl','rdy_sl','shanhushi','huotanfen','oth_other');
+				if($.inArray(arr[0],creatureGroup)!=-1){
+					$('#catalog-select').val('creature');
+				}
+				else if($.inArray(arr[0],equipmentGroup)!=-1){
+					$('#catalog-select').val('equipment');
+				}
+				else if($.inArray(arr[0],otherGroup)!=-1){
+					$('#catalog-select').val('other');
+				}
+
+				//bind onchange event for select
+				$('#catalog-select').change(function(){
+					var catalogue=$(this).children('option:selected').val();//这就是selected的值
+					if(catalogue=='all'){
+						window.location.href="/products";//页面跳转并传参
+					}
+					else{
+						window.location.href="/products/"+catalogue+"/none";//页面跳转并传参
+					}
+				}) 
+			});
+</script>
+<script type="text/javascript" src="{% static 'public/js/popup.js'%}"></script>
 <div class="content">
 	<div class="content_box">
+	<div id="test"></div>
 		<div class="men">
 			<div class="col-md-3 sidebar">
 				<div class="block block-layered-nav">
@@ -9,40 +53,38 @@
 					</div>
 					<div class="block-content">
 						<dl id="narrow-by-list">
-							<dt class="odd">水生生物</dt>
+							<dt class="odd"><a href="/products" style="color:#e05b5b">全部商品</a></dt>
+	
+							<dt class="odd"><a href="/products/creature/none" style="color:#e05b5b">水生生物</a></dt>
 							<dd class="odd">
 								<ol>
-									<li><a href="#"><span class="price1">US$&nbsp;0,00</span>
-											- <span class="price1">US$&nbsp;99,99</span></a> (4)</li>
-									<li><a href="#"><span class="price1">US$&nbsp;100,00</span>
-											- <span class="price1">US$&nbsp;199,99</span></a> (4)</li>
-									<li><a href="#"><span class="price1">US$&nbsp;200,00</span>
-											- <span class="price1">US$&nbsp;299,99</span></a> (1)</li>
-									<li><a href="#"><span class="price1">US$&nbsp;400,00</span>
-											- <span class="price1">US$&nbsp;499,99</span></a> (1)</li>
-									<li><a href="#"><span class="price1">US$&nbsp;800,00</span>
-											and above</a> (1)</li>
+									<li><a href="/products/none/danshuiyu"><span class="price1">淡水鱼</span></a> (4)</li>
+									<li><a href="/products/none/redaiyu"><span class="price1">热带鱼</span></a> (4)</li>
+									<li><a href="#"><span class="price1">乌龟</span></a> (1)</li>
+									<li><a href="#"><span class="price1">水草</span></a> (1)</li>
+									<li><a href="#"><span class="price1">贝类</span></a> (1)</li>
+									<li><a href="#"><span class="price1">其他</span></a> (1)</li>
 								</ol>
 							</dd>
-							<dt class="even">水族设备</dt>
+							<dt class="even"><a href="/products/equipment/none" style="color:#e05b5b">水族设备</a></dt></dt>
 							<dd class="even">
 								<ol>
-									<li><a href="#">Calvin Klein</a> (2)</li>
-									<li><a href="#">Diesel</a> (1)</li>
-									<li><a href="#">Polo</a> (1)</li>
-									<li><a href="#">Tommy Hilfiger</a> (1)</li>
-									<li><a href="#">Versace</a> (1)</li>
+									<li><a href="/products/none/yugang">鱼缸</a> (2)</li>
+									<li><a href="#">水泵</a> (1)</li>
+									<li><a href="#">加热器</a> (1)</li>
+									<li><a href="#">水温计</a> (1)</li>
+									<li><a href="#">过滤器</a> (1)</li>
+									<li><a href="#">其他</a> (1)</li>
 								</ol>
 							</dd>
-							<dt class="last odd">饲料和其他</dt>
+							<dt class="last odd"><a href="/products/other/none" style="color:#e05b5b">饲料和其他</a></dt>
 							<dd class="last odd">
 								<ol>
-									<li>Black (0)</li>
-									<li><a href="#">Blue</a> (2)</li>
-									<li><a href="#">Green</a> (1)</li>
-									<li><a href="#">Grey</a> (1)</li>
-									<li><a href="#">Red</a> (1)</li>
-									<li><a href="#">White</a> (1)</li>
+									<li><a href="#">淡水鱼饲料</a> (2)</li>
+									<li><a href="#">热带鱼饲料</a> (1)</li>
+									<li><a href="#">珊瑚石</a> (1)</li>
+									<li><a href="#">活碳粉</a> (1)</li>
+									<li><a href="#">其他</a> (1)</li>
 								</ol>
 							</dd>
 						</dl>
@@ -69,11 +111,11 @@
 				<div class="mens-toolbar">
 					<div class="sort">
 						<div class="sort-by">
-							<label>分类</label> <select>
-								<option value="">全部</option>
-								<option value="">水生生物</option>
-								<option value="">水族设备</option>
-								<option value="">饲料和其他</option>
+							<label>分类</label> <select id="catalog-select">
+								<option value="all">全部商品</option>
+								<option value="creature">水生生物</option>
+								<option value="equipment">水族设备</option>
+								<option value="other">饲料和其他</option>
 							</select>
 						</div>
 					</div>
@@ -94,7 +136,8 @@
 					</div>
 					<div class="clearfix"></div>
 				</div>
-				<div class="span_3">
+				<div id="productlist"></div>
+				<!-- <div class="span_3">
 					<div class="col_1_of_single1 span_1_of_single1">
 						<a href="{% url 'detail'%}"> <img
 							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
@@ -126,73 +169,10 @@
 						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
 					</div>
 					<div class="clearfix"></div>
-				</div>
-				<div class="span_3">
-					<div class="col_1_of_single1 span_1_of_single1">
-						<a href="{% url 'detail'%}"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
-							alt="" />
-						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a class="btn1 btn6 btn-1 btn1-1b buy" style="margin-top:0px;padding: 3px 20px">888</a>
-						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
-					</div>
-					<div class="col_1_of_single1 span_1_of_single1">
-						<a href="{% url 'detail'%}"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
-							alt="" />
-						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a class="btn1 btn6 btn-1 btn1-1b buy" style="margin-top:0px;padding: 3px 20px">888</a>
-						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
-					</div>
-					<div class="col_1_of_single1 span_1_of_single1">
-						<a href="{% url 'detail'%}"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
-							alt="" />
-						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a class="btn1 btn6 btn-1 btn1-1b buy" style="margin-top:0px;padding: 3px 20px">888</a>
-						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
-					</div>
+				</div> -->
+				<!-- <div id="productlist" class="span_3">
 					<div class="clearfix"></div>
-				</div>
-				<div class="span_3">
-					<div class="col_1_of_single1 span_1_of_single1">
-						<a href="{% url 'detail'%}"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
-							alt="" />
-						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a class="btn1 btn6 btn-1 btn1-1b buy" style="margin-top:0px;padding: 3px 20px">888</a>
-						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
-					</div>
-					<div class="col_1_of_single1 span_1_of_single1">
-						<a href="{% url 'detail'%}"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
-							alt="" />
-						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a class="btn1 btn6 btn-1 btn1-1b buy" style="margin-top:0px;padding: 3px 20px">888</a>
-						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
-					</div>
-					<div class="col_1_of_single1 span_1_of_single1">
-						<a href="{% url 'detail'%}"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
-							alt="" />
-						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a class="btn1 btn6 btn-1 btn1-1b buy" style="margin-top:0px;padding: 3px 20px">888</a>
-						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
-					</div>
-					<div class="clearfix"></div>
-				</div>
+				</div> -->
 			</div>
 			<div class="clearfix"></div>
 		</div>

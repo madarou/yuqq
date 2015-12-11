@@ -492,7 +492,7 @@ h4.top {
 	color: #0a263c;
 }
 .block-layered-nav dt {
-  padding: 10px 0;
+  /* padding: 10px 0; */
   font-weight: bold;
   text-transform: capitalize;
   color:#e05b5b;
