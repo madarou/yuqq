@@ -218,27 +218,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 								</div>
 							</div></li>
-						<li class="grid"><a class="color2" href="{% url 'services'%}">服务项目</a>
+						<li class="grid"><a class="color2" href="/services">服务项目</a>
 							<div class="megapanel">
 								<div class="row">
-									<div class="col1">
+									<div class="col1" style="width:22%">
 										<div class="h_nav">
 											<h5>
-												<a href="{% url 'services'%}">水族造景</a>
+												<a href="/services/zulin">商品租赁</a>
 											</h5>
 										</div>
 									</div>
-									<div class="col1">
+									<div class="col1" style="width:22%">
 										<div class="h_nav">
 											<h5>
-												<a href="{% url 'services'%}">生态养护</a>
+												<a href="/services/zaojin">造景设计</a>
 											</h5>
 										</div>
 									</div>
-									<div class="col1">
+									<div class="col1" style="width:22%">
 										<div class="h_nav">
 											<h5>
-												<a href="{% url 'services'%}">鱼缸清洗</a>
+												<a href="/services/yanghu">生态养护</a>
+											</h5>
+										</div>
+									</div>
+									<div class="col1" style="width:22%">
+										<div class="h_nav">
+											<h5>
+												<a href="/services/xiyugang">鱼缸清洗</a>
 											</h5>
 										</div>
 									</div>
@@ -364,9 +371,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	{% endblock %}
 	<script defer src="{% static 'public/js/jquery.flexslider.js'%}"></script>
 	<script type="text/javascript">
-		$(function() {
+		/* $(function() {
 			SyntaxHighlighter.all();
-		});
+		}); */
 		$(window).load(function() {
 			$('.flexslider').flexslider({
 				animation : "slide",

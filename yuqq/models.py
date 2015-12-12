@@ -57,6 +57,54 @@ class Product(BaseModel):
     popularity=models.CharField(max_length=50,null=True)
     remarks=models.CharField(max_length=50,null=True)
     kind=models.CharField(max_length=20,null=True)
+    show=models.CharField(max_length=3,null=True)
+    
+class Index(BaseModel):
+    name=models.CharField(max_length=30,null=True)
+    price=models.CharField(max_length=8,null=True)
+    slogan=models.CharField(max_length=50,null=True)
+    pic=models.CharField(max_length=40,null=True)
+    type=models.CharField(max_length=20,null=True)
+    
+class Order(BaseModel):
+    product_name=models.CharField(max_length=30,null=True)
+    product_num=models.CharField(max_length=5,null=True)
+    product_price=models.CharField(max_length=8,null=True)
+    total_cost=models.CharField(max_length=10,null=True)
+    user_remark=models.CharField(max_length=80,null=True)
+    send_home=models.CharField(max_length=3,null=True)
+    user_name=models.CharField(max_length=20,null=True)
+    fetch_date=models.CharField(max_length=20,null=True)
+    contact=models.CharField(max_length=30,null=True)
+    send_date=models.CharField(max_length=20,null=True)
+    send_address=models.CharField(max_length=50,null=True)
+    order_date=models.DateTimeField(null=True)
+    actual_cost=models.CharField(max_length=10,null=True)
+    yqq_remark=models.CharField(max_length=80,null=True)
+    
+class Service(BaseModel):
+    type=models.CharField(max_length=10,null=True)
+    user_name=models.CharField(max_length=20,null=True)
+    service_date=models.CharField(max_length=20,null=True)
+    contact=models.CharField(max_length=30,null=True)
+    address=models.CharField(max_length=50,null=True)
+    user_remark=models.CharField(max_length=80,null=True)
+    yqq_remark=models.CharField(max_length=80,null=True)
+    order_date=models.DateTimeField(null=True)
+    actual_cost=models.CharField(max_length=10,null=True)
+    
+class Faq(BaseModel):
+    question=models.CharField(max_length=255,null=True)
+    answer=models.CharField(max_length=255,null=True)
+    ask_time=models.DateTimeField(null=True)
+    answer_time=models.DateTimeField(null=True)
+
+class Message(BaseModel):
+    user_name=models.CharField(max_length=20,null=True)
+    contact=models.CharField(max_length=30,null=True)
+    content=models.CharField(max_length=255,null=True)
+    time=models.DateTimeField(null=True)
+    
 if __name__=="__main__":
     #from yuqq.models import Product
     intro = Introduction(name="hello")

@@ -1,21 +1,48 @@
 {% extends "public/base.html" %} {% block content %}
 {% load static from staticfiles %}
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$("#submit").bind("click",function(event){
+			 $("#postSuccess").hide();
+	         var username = $("#user_name").val();  //获取元素的值
+	         if(username=="称呼"){     //判断值是否为空
+			       $("#postSuccess").html("您的称呼未填.");  //提示信息
+			       $("#postSuccess").show();
+			       return false;
+	   		 }
+	         var user_contact = $("#user_contact").val();  //获取元素的值
+	         if(user_contact=="联系方式"){     //判断值是否为空
+			       $("#postSuccess").html("您的联系方式未填.");  //提示信息
+			       $("#postSuccess").show();
+			       return false;
+	   		 }
+	         var user_message = $("#user_message").val();  //获取元素的值
+	         if(user_message=="留言"){     //判断值是否为空
+			       $("#postSuccess").html("您的留言未填.");  //提示信息
+			       $("#postSuccess").show();
+			       return false;
+	   		 }
+	         $("#postSuccess").html("提交成功！感谢您的留言!");
+	         $("#postSuccess").show();
+	         return true;
+		})
+	})
+</script>
 <div class="content">
   <div class="content_box">
-   
 	<div class="men">
 	 <p>您的咨询、赞赏、建议和意见都是我们进步的动力！</p>
 	   <div class="contact_form">
-	   	  <h2>留言箱</h2>
-	           <form>
+	   	  <h2>留言箱</h2><span id="postSuccess" style="display:none;color:red"></span>
+	           <form action="{% url 'messagepost' %}" method="post">
 					<div class="row_5">
-                     	<input type="text" class="text" value="称呼" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '称呼';}">
-					 	<input type="text" class="text" value="联系方式" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '联系方式';}" style="margin-left:20px">
+                     	<input id="user_name" type="text" class="text" name="user_name" value="称呼" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '称呼';}">
+					 	<input id="user_contact" type="text" class="text" name="user_contact" value="联系方式" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '联系方式';}" style="margin-left:20px">
 					 	<!-- <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '主题';}" style="margin-left:20px"> -->
 					 	<div class="clearfix"></div>
 					</div>
 					<div class="row_6">
-	                   <textarea value="留言:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '留言:';}">留言:</textarea>
+	                   <textarea id="user_message" name="user_message" value="留言" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '留言';}">留言</textarea>
 	                </div>
 	                <div style="text-align:right"><input name="submit" type="submit" id="submit" value="提交"></div>
 			        <div class="clearfix"></div>

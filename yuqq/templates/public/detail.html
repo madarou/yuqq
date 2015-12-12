@@ -15,6 +15,7 @@
 				detail.setProductName($('#product_name'));
 				detail.setProductPrice($('#product_price'));
 				detail.setBriefIntro($('#brief_intro'));
+				detail.setCoverImg($('#coverpic'));
 				detail.setRaiseMethod($('#raise_method'));
 				detail.setUseMethod($('#use_method'));
 				detail.setRemarks($('#remarks'));
@@ -39,7 +40,6 @@
 	       <div class="col-md-9 single_right">
 	   	       <div class="grid images_3_of_2">
 						<ul id="etalage">
-							
 						</ul>
 						 <div class="clearfix"></div>		
 				  </div> 
@@ -58,11 +58,12 @@
       	<!-- FlexSlider -->
               <section class="slider_flex">
 				  <div class="flexslider">
-					<ul class="slides">
-						<li><img src="{% static 'public/img/m2.jpg'%}" class="img-responsive" alt=""/></li>
+					<ul id="coverpic" class="slides">
+						
+						<!--<li><img src="{% static 'public/img/m2.jpg'%}" class="img-responsive" alt=""/></li>
 						<li><img src="{% static 'public/img/m3.jpg'%}" class="img-responsive" alt=""/></li>
 						<li><img src="{% static 'public/img/m4.jpg'%}" class="img-responsive" alt=""/></li>
-						<li><img src="{% static 'public/img/m5.jpg'%}" class="img-responsive" alt=""/></li>
+						<li><img src="{% static 'public/img/m5.jpg'%}" class="img-responsive" alt=""/></li> -->
 				    </ul>
 				  </div>
 	          </section>
@@ -85,7 +86,7 @@
      <h4 class="head_single">相关推荐</h4>
              <div class="single_span_3">
 	          	 <div class="col-sm-3 span_4">
-	          	     <a href="{% url 'detail'%}"> <img
+	          	     <a href="/detail/血鹦鹉"> <img
 							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
 							alt="" />
 						</a>
@@ -95,7 +96,7 @@
 						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
 			     </div> 
 				 <div class="col-sm-3 span_4">
-	          	     <a href="{% url 'detail'%}"> <img
+	          	     <a href="/detail/血鹦鹉"> <img
 							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
 							alt="" />
 						</a>
@@ -105,7 +106,7 @@
 						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
 			      </div> 
 				  <div class="col-sm-3 span_4">
-	          	     <a href="{% url 'detail'%}"> <img
+	          	     <a href="/detail/血鹦鹉"> <img
 							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
 							alt="" />
 						</a>
@@ -115,7 +116,7 @@
 						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
 			      </div> 
 				  <div class="col-sm-3 span_4">
-	          	     <a href="{% url 'detail'%}"> <img
+	          	     <a href="/detail/血鹦鹉"> <img
 							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
 							alt="" />
 						</a>

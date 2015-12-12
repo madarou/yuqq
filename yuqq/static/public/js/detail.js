@@ -60,6 +60,10 @@ var Detail = (function(product,intro) {
 				var li4='<li>'+img4_1+img4_2+'</li>';
 				target.html(li1+li2+li3+li4);
 			},
+			setCoverImg:function(target){
+				var img = '<li><img src="/static/'+this.get('pic5')+'" class="img-responsive"/></li>';
+				target.html(img);
+			},
 			setProductName:function(target){
 				var name=this.get('name');
 				target.text(name);
@@ -109,6 +113,7 @@ var Detail = (function(product,intro) {
 		that.set('pic2',product['pic2']);
 		that.set('pic3',product['pic3']);
 		that.set('pic4',product['pic4']);
+		that.set('pic5',product['pic5']);
 		that.set('remarks',product['remarks']);
 		
 		that.set('brief_intro',intro['brief_intro']);

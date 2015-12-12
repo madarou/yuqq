@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',views.index,name='index'),
     url(r'^services/$',views.services,name='services'),
+    url(r'^services/(?P<kind>[a-z]+)/$',views.services,name='services'),
     url(r'^aboutme/$',views.aboutme,name='aboutme'),
     url(r'^message/$',views.message,name='message'),
     url(r'^products/$',views.products,name='products'),
@@ -28,6 +29,8 @@ urlpatterns = [
     url(r'^knowledge/$',views.knowledge,name='knowledge'),
     url(r'^share/$',views.share,name='share'),
     url(r'^detail/$',views.detail,name='detail'),
+    url(r'^detail/(?P<name>[\S]+)$',views.detail,name='detail'),
+    url(r'^messagepost/$',views.messagepost,name='messagepost'),
     #url(r'^img/(?P/pathpath.*)$', 'django.views.static.serve',{ 'document_root': settings.STATIC_URL }),
     #url(r'^public/img/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_URL } ),
 ]

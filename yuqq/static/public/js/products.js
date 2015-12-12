@@ -35,11 +35,11 @@ var Products = (function(products) {
 	
 	var _setItem = function(obj){
 		var item = '<div class="col_1_of_single1 span_1_of_single1">';
-		var img = '<a href="/detail"> <img src="/static/'+obj['fields']['pic1']+'" class="img-responsive"/></a>';
+		var img = '<a href="/detail/'+obj['fields']['name']+'"> <img src="/static/'+obj['fields']['pic5']+'" class="img-responsive"/></a>';
 		var name = '<h3>'+obj['fields']['name']+'</h3>';
 		var slogan = '<p>'+obj['fields']['slogan']+'</p>';
 		var price = '<a class="btn1 btn6 btn-1 btn1-1b buy" style="margin-top:0px;padding: 3px 20px">'+obj['fields']['price_low']+'</a>';
-		var view_detail = '<a href="/detail" style="font-size:50%;margin-left: 1em;">详情</a>';
+		var view_detail = '<a href="/detail/'+obj['fields']['name']+'" style="font-size:50%;margin-left: 1em;">详情</a>';
 		return item+img+name+slogan+price+view_detail+'</div>';
 	}
 	return prod;
