@@ -57,8 +57,8 @@ var Detail = (function(product,intro) {
 				var li1='<li>'+img1_1+img1_2+'</li>';
 				var li2='<li>'+img2_1+img2_2+'</li>';
 				var li3='<li>'+img3_1+img3_2+'</li>';
-				var li4='<li>'+img4_1+img4_2+'</li>';
-				target.html(li1+li2+li3+li4);
+//				var li4='<li>'+img4_1+img4_2+'</li>';
+				target.html(li1+li2+li3);
 			},
 			setCoverImg:function(target){
 				var img = '<li><img src="/static/'+this.get('pic5')+'" class="img-responsive"/></li>';
@@ -71,12 +71,12 @@ var Detail = (function(product,intro) {
 				$('#intro_link').text(name+'简介');
 			},
 			setProductPrice:function(target){
-				var price=this.get('price_low')+'<a href="#">起，我要讲价</a>';
+				var price=this.get('price_low')+'<a href="#">元起，我要讲价</a>';
 				target.html(price);
 			},
 			setBriefIntro:function(target){
 				var brief = this.get('brief_intro');
-				target.text(brief);
+				target.html(brief);
 			},
 			setRaiseMethod:function(target){
 				var raise_method = this.get('raise_method');
@@ -99,7 +99,7 @@ var Detail = (function(product,intro) {
 				if (remarks==null||remarks.replace(/(^s*)|(s*$)/g, "").length ==0){
 					target.text('无');
 				}else{
-					target.text(remarks);
+					target.html(remarks);
 				}
 			}
 	}
