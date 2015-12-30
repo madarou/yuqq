@@ -104,7 +104,11 @@ class Message(BaseModel):
     contact=models.CharField(max_length=30,null=True)
     content=models.CharField(max_length=255,null=True)
     time=models.DateTimeField(null=True)
-    
+
+class Visitor(BaseModel):
+    ip=models.CharField(max_length=20,null=True)
+    time=models.DateTimeField(null=True)
+        
 if __name__=="__main__":
     #from yuqq.models import Product
     intro = Introduction(name="hello")

@@ -11,7 +11,13 @@ import json
 from .models import *
 # Create your views here.
 def index(request):
-    index=serializers.serialize("json", Index.objects.all())
+    #index=serializers.serialize("json", Index.objects.all())
+    if request.META.has_key('HTTP_X_FORWARDED_FOR'):  
+        ip =  request.META['HTTP_X_FORWARDED_FOR']  
+    else:  
+        ip = request.META['REMOTE_ADDR'] 
+    visitor = Visitor(ip=ip,time=datetime.datetime.now())
+    visitor.save()
     return render_to_response('public/index.html',{'Index':index})
 
 def aboutme(request):
