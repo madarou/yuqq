@@ -631,13 +631,13 @@ ul.dc_pagination li a {
 	-ms-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 }
-.span_1_of_single1 img:hover {
+/* .span_1_of_single1 img:hover {
 	transform: rotateY(180deg);
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
 	-ms-transform: rotateY(180deg);
 	-o-transform: rotateY(180deg);
-}
+} */
 /*--single--*/
 .images_3_of_2 {
    width: 46.2%;
