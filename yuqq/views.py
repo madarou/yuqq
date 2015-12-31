@@ -11,7 +11,7 @@ import json
 from .models import *
 # Create your views here.
 def index(request):
-    #index=serializers.serialize("json", Index.objects.all())
+    index=serializers.serialize("json", Index.objects.all())
     if request.META.has_key('HTTP_X_FORWARDED_FOR'):  
         ip =  request.META['HTTP_X_FORWARDED_FOR']  
     else:  
