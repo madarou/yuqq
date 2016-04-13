@@ -20,7 +20,7 @@ var Index = (function(products) {
 				var img = '<img src="/static/'+pro1['pic']+'" class="img-responsive"/>';
 				var div1 = '<div class="banner_desc">';
 				var name = '<h1><a href="/detail/'+pro1['name']+'" style="color:#e05b5b">'+pro1['name']+'</a></h1>';
-				var slogan = '<h2>--'+pro1['slogan']+'</h2>';
+				var slogan = '<h2>'+pro1['slogan']+'</h2>';
 				var price = '<h5>￥'+pro1['price']+'起 <small>Only</small></h5>';
 				var div2 = '<a class="btn1 btn4 btn-1 btn1-1b buy">求包养</a></div>';
 				target.html(img+div1+name+slogan+price+div2);

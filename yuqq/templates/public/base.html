@@ -43,30 +43,55 @@
 	});
 </script>
 <!-- 弹出框 -->
+<style>
+.popup {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.4);
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: none;
+	z-index:99;
+}
+
+.contactbox {
+	position: absolute;
+	/* top: 50%;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: 75px; */
+	display: none;
+	z-index:99;
+	background:white;
+	padding:2em;
+}
+</style>
 <script type="text/javascript">
-	$(function() {
-		$(".popup-bg").click(function() {
-			$(".buybox").hide();
-			$(this).hide();
+$(function() {
+	$("#closepop").bind("click",function(event){
+		$(".popup-bg").hide();
+		$(".buybox").hide();
+		return false;
+	});
+	$(".buy").click(function() {
+		center($(".buybox"));
+		$(".popup-bg").show();
+		$(".buybox").show();
+	});
+	function center(obj) {
+		var screenWidth = $(window).width(), screenHeight = $(window)
+				.height(); //当前浏览器窗口的 宽高
+		var scrolltop = $(document).scrollTop();//获取当前窗口距离页面顶部高度
+		var objLeft = (screenWidth - obj.width()) / 2;
+		var objTop = (screenHeight - obj.height()) / 2 + scrolltop;
+		obj.css({
+			left : objLeft + 'px',
+			top : objTop + 'px',
+			'display' : 'block'
 		});
-		$(".buy").click(function() {
-			center($(".buybox"));
-			$(".popup-bg").show();
-			$(".buybox").show();
-		});
-		function center(obj) {
-			var screenWidth = $(window).width(), screenHeight = $(window)
-					.height(); //当前浏览器窗口的 宽高
-			var scrolltop = $(document).scrollTop();//获取当前窗口距离页面顶部高度
-			var objLeft = (screenWidth - obj.width()) / 2;
-			var objTop = (screenHeight - obj.height()) / 2 + scrolltop;
-			obj.css({
-				left : objLeft + 'px',
-				top : objTop + 'px',
-				'display' : 'block'
-			});
-		}
-	})
+	}
+})
 </script>
 </head>
 <body>
@@ -75,90 +100,31 @@
 			<!-- 弹出框 -->
 			<div class="popup-bg"></div>
 			<div class="buybox">
-				<div class="register">
-					<form>
-						<div class="register-top-grid">
-							<h4>商品信息：</h4>
-							<div class="row" style="width: 100%">
-								<div class="col-sm-6">
-									<span><label>名称：</label>血色鹦鹉</span>
-								</div>
-								<div class="col-sm-6">
-									<span><label>数量：</label> <select>
-											<option value="">1</option>
-											<option value="">2</option>
-											<option value="">3</option>
-											<option value="">4</option>
-									</select> </span>
-								</div>
-							</div>
-							<div class="row" style="width: 100%">
-								<div class="col-sm-12">
-									<div style="width: 100%">
-										<span>备注：</span> <input type="text">
-									</div>
-								</div>
-							</div>
-							<div class="clearfix"></div>
+			<h4>在线交易功能等待开通，请通过以下联系方式与我们详谈：</h4>
+			<div class="header_bottom_right row" align="right">
+						<div class="col-sm-5">
+							<img src="{% static 'public/img/telephone-logo.png'%}" alt="" />
+							18661863775
 						</div>
-					</form>
-					<ul id="myTab" class="nav nav-tabs" style="margin-top:7em">
-							<li class="active"><a href="#self" data-toggle="tab">
-									预订自取</a></li>
-							<li><a href="#send" data-toggle="tab">送货上门</a></li>
-						</ul>
-						<div id="myTabContent" class="tab-content">
-							<div class="tab-pane fade in active" id="self">
-										<div class="register-bottom-grid">
-											<h4>预订信息：</h4>
-											<div style="width: 31%">
-												<span><label>称呼*</label></span> <input type="text">
-											</div>
-											<div style="width: 31%">
-												<span><label>取货日期*</label></span> <input type="text">
-											</div>
-											<div style="width: 31%">
-												<span><label>联系方式*</label></span> <input type="text">
-											</div><br>
-											<div><p class="m_text2" style="color:red">下单后，我们会有工作人员根据您留下的联系方式与您确认订单(推荐使用<strong>手机</strong>或<strong>微信</strong>)</p></div>
-											<br>
-											<div><p class="m_text2">实体店取货地址：成都市武侯区玉林路xxx号(<a href="{% url 'aboutme'%}">查看详细地址</a>)</p></div>
-											<div class="clearfix"></div>
-										</div>
-								  
-							</div>
-							
-								<div class="tab-pane fade" id="send">
-									<div class="register-bottom-grid">
-										<h4>配送信息：</h4>
-										<div style="width: 31%">
-											<span><label>称呼*</label></span> <input type="text">
-										</div>
-										<div style="width: 31%">
-											<span><label>配送日期*</label></span> <input type="text">
-										</div>
-										<div style="width: 31%">
-											<span><label>联系方式*</label></span> <input type="text">
-										</div>
-										<br>
-										<div style="width: 96%">
-											<span>配送地址<label>*</label></span> <input type="text">
-										</div>
-										<br>
-										<div><p class="m_text2" style="color:red">下单后，我们会有工作人员根据您留下的联系方式与您确认订单(推荐使用<strong>手机</strong>或<strong>微信</strong>)</p></div>
-										<div class="clearfix"></div>
-									</div>
-								</div>
+						<!-- <div class="col-sm-3">
+							<img src="{% static 'public/img/qq-logo.png'%}" alt="" />
+							314777268
+						</div> -->
+						<div class="col-sm-6">
+							<img src="{% static 'public/img/weixin-logo.png'%}" alt="" />
+							haxiongmao123
 						</div>
-					<div class="clearfix"></div>
-					<div class="register-but">
+						<div class="clearfix"></div>
+			</div>
+			<br>
+			<div><p class="m_text2">实体店取货地址：成都市武侯区玉林西路31号(<a href="{% url 'aboutme'%}">查看详细地址</a>)</p></div>
+			<div class="register-but" >
 						<form>
-							<input type="submit" value="确认">
+							<input id="closepop" type="submit" value="确定">
 							<div class="clearfix"></div>
 						</form>
-					</div>
-				</div>
 			</div>
+		</div>
 			{% block header %}
 			<div class="header_top">
 				<div class="col-sm-9 h_menu4">
