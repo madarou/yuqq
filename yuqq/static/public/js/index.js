@@ -54,7 +54,7 @@ var Index = (function(products) {
 			},
 			showPro11:function(target){
 				var pro11 = this.get('productList')[10]['fields'];
-				var div1 = '<div class="col_1_of_2 span_1_of_2 span_3"><h3><a href="/detail/'+pro11['name']+'" style="color:#e05b5b">'+pro11['name']+'</a></h3><h4>￥'+pro11['price']+'</h4><h5>'+pro11['slogan']+'</h5><a class="btn1 btn6 btn-1 btn1-1b buy">带走</a></div>';
+				var div1 = '<div class="col_1_of_2 span_1_of_2 span_3"><h3><a href="/products/none/yugang/" style="color:#e05b5b">'+pro11['name']+'</a></h3><h4>￥'+pro11['price']+'</h4><h5>'+pro11['slogan']+'</h5><a class="btn1 btn6 btn-1 btn1-1b buy">带走</a></div>';
 				var div2 = '<div class="col_1_of_2 span_1_of_2 span_4"><div class="span_5"><img src="/static/'+pro11['pic']+'" class="img-responsive"/></div></div>';
 				target.html(div1+div2+'<div class="clearfix"></div>');
 			}
