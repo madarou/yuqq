@@ -1,0 +1,27 @@
+{% extends "public/base.html" %} {% block content %} {% load static from staticfiles %}
+<script type="text/javascript">
+				var news={{ news|safe}}
+				console.log(news)
+</script>
+<div class="content">
+	<div class="content_box" style="padding-top: 10px;">
+		<div class="panel" style="border-color: #15BE74;border-radius: 0px;">
+			<div class="panel-heading" style="background-color: #15BE74;border-color: #15BE74;">
+				<h3 class="panel-title">你只管看，剩下的交给我</h3>
+			</div>
+			<div class="panel-body">
+				 1、最好不要在卧室内养鱼，因为水族箱的体积不同于一般鱼缸，散发的水汽很多，会使室内的湿度增大，容易滋生霉菌，导致生物性污染且水族箱的气泵还会产生噪音，影响睡眠。
+
+2、注意鱼的放养密度，一般一米左右的缸，10公分左右的金鱼，最多放6—8条;二要根据鱼的大小、种类，适当地投食，避免多余食物残留在鱼缸里，污染水质
+
+3、注意换水频率，冬天每一个星期左右就要换一次水，每次不超过一缸水的3/10，夏天需要每天换水，换的水不能超过2/10。值得注意的是，换水时，不要直接注入自来水，应提前静置一天以上，以减少漂白粉含量，提高自来水的含氧量。
+
+4、家庭养鱼对水质的要求也很高。尤其要注意鱼的放养密度和食物投放量，并及时清理其排泄物，否则鱼缸这个天然“加湿器”，很可能会成为疾病的温床。比如鱼尿里含有氨氮成分，闻久了会影响人的健康。而水族箱的过滤设备只能过滤鱼粪、食物残渣等，不能过滤鱼尿，如果要保证水质清新，还是要靠人工换水。
+
+5、可以把鱼缸放在客厅或书房里，这里空气流通好，便于换水；鱼缸要安置稳固，尽量远离过道；根据居室的大小，合理地选择鱼缸，不要在小房间里放大鱼缸。如果有条件的话，最好还是不要用鱼缸或水族箱养鱼，木盆、瓦盆或水泥池，无论对鱼的健康，还是人的健康来说，都是更好的选择。
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+{% endblock %}
