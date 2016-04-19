@@ -734,7 +734,7 @@ h4.head_single{
 	text-decoration:none;
 }
 .error-404.text-center {
-	min-height: 500px;
+	/* min-height: 500px; */
 }
 .error-404 h1 {
 	font-size: 12em;
