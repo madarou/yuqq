@@ -911,9 +911,9 @@ a.create:hover, .account-top input[type="submit"]:hover, .register-but form inpu
   width: 100px;
   height: 100px;
   position: absolute;
-  top: 1%;
-  right: 8%;
-  padding: 1.3em 0 0;
+  bottom: 12%;
+  left: 12%;
+  padding: 0.6em 0 0;
   text-align: center;
 }
 .five-in span {
