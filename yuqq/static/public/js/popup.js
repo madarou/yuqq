@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 		var objLeft = (screenWidth - obj.width()) / 2;
 		var objTop = (screenHeight - obj.height()) / 2 + scrolltop;
 		obj.css({
-			left : objLeft + 'px',
+			left : (objLeft-30) + 'px',
 			top : objTop + 'px',
 			'display' : 'block'
 		});

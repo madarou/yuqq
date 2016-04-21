@@ -42,8 +42,8 @@
 }
 
 .big {
-	width: 300px;
-	height: 300px;
+	width: 500px;
+	height: 500px;
 }
 
 .left {
@@ -72,142 +72,81 @@
 	text-align: center;
 	/* padding: 0 0 1em 0; */
 }
+
+.kehufenxiang {
+	width:250px;
+	height:300px;
+}
+
+.content {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.gallery img {
+    height: 200px;
+    transition: -webkit-filter .4s, filter .4s;
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    margin-top:0.5em;
+}
+
+.gallery img:hover {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+.gallery a {
+    width: 250px;
+    height: 200px;
+    /* display: inline-block;
+    overflow: hidden; */
+    margin: 2px;
+    box-shadow: 0 0 4px -1px #000;
+}
 </style>
+<link rel="stylesheet" href="{% static 'public/css/baguetteBox.css'%}">
 <div class="content">
 	<div class="content_box">
-		<div class="popup"></div>
-		<div class="picbox">
-			<img class="big" src="{% static 'public/img/big_1.jpg'%}" /> <img
-				class="left" src="{% static 'public/img/left.png'%}" /> <img
-				class="right" src="{% static 'public/img/right.png'%}" />
-		</div>
-		<div class="men">
-			<div class="col-md-3 sidebar">
-				<div class="block block-layered-nav">
-					<div class="block-title">
-						<strong><span>左边栏</span></strong>
-					</div>
-					<div class="block-content">
-						<dl id="narrow-by-list">
-							<dt class="odd">我在哪</dt>
-							<dd class="odd">
-								<ol>
-									<li><a href="#"><span class="price1">我在客厅</span></a> (4)</li>
-									<li><a href="#"><span class="price1">我在办公室</span></a> (4)</li>
-									<li><a href="#"><span class="price1">我在宿舍</span></a> (1)</li>
-									<li><a href="#"><span class="price1">我在大堂</span></a> (1)</li>
-									<li><a href="#"><span class="price1">我在卧室</span></a> (1)</li>
-								</ol>
-							</dd>
-						</dl>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-9 box_3">
-				<!-- <div class="center">
-					<img src="{% static 'public/img/big_1.jpg'%}" /> <img
-						src="{% static 'public/img/big_2.jpg'%}" /> <img
-						src="{% static 'public/img/big_3.jpg'%}" /> <img
-						src="{% static 'public/img/big_4.jpg'%}" /> <img
-						src="{% static 'public/img/big_5.jpg'%}" /> <img
-						src="{% static 'public/img/big_6.jpg'%}" /> <img
-						src="{% static 'public/img/big_7.jpg'%}" /> <img
-						src="{% static 'public/img/big_8.jpg'%}" /> <img
-						src="{% static 'public/img/big_9.jpg'%}" />
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-						<div class="superbox-list"><img src="{% static 'public/img/big_1.jpg'%}" /></div>
-				</div> -->
-				<div class="span_3">
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_1.jpg'%}" />
-					</div>
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_2.jpg'%}" />
-					</div>
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_3.jpg'%}" />
-					</div>
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_4.jpg'%}" />
-					</div>
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_5.jpg'%}" />
-					</div>
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_6.jpg'%}" />
-					</div>
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_7.jpg'%}" />
-					</div>
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_8.jpg'%}" />
-					</div>
-					<div class="col_1_of_single span_1_of_single">
-						<img src="{% static 'public/img/big_9.jpg'%}" />
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
+		<div class="box_3" style="text-align: center;">
+		<div class="baguetteBoxOne gallery">
+        <a href="{% static 'public/img/kehufenxiang1.jpg'%}" title="芳草街"><img src="{% static 'public/img/kehufenxiang1.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang2.jpg'%}" title="南三环"><img src="{% static 'public/img/kehufenxiang2.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang3.jpg'%}" title="玉林"><img src="{% static 'public/img/kehufenxiang3.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang4.jpg'%}" title="新都"><img src="{% static 'public/img/kehufenxiang4.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang5.jpg'%}" title="玉林"><img src="{% static 'public/img/kehufenxiang5.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang6.jpg'%}" title="郫县"><img src="{% static 'public/img/kehufenxiang6.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang7.jpg'%}" title="新南门"><img src="{% static 'public/img/kehufenxiang7.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang8.jpg'%}" title="衣冠庙"><img src="{% static 'public/img/kehufenxiang8.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang9.jpg'%}" title="衣冠庙"><img src="{% static 'public/img/kehufenxiang9.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang10.jpg'%}" title="芳草街"><img src="{% static 'public/img/kehufenxiang10.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang11.jpg'%}" title="桐梓林"><img src="{% static 'public/img/kehufenxiang11.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang12.jpg'%}" title="龙泉驿"><img src="{% static 'public/img/kehufenxiang12.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang13.jpg'%}" title="芳草街"><img src="{% static 'public/img/kehufenxiang13.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang14.jpg'%}" title="大源"><img src="{% static 'public/img/kehufenxiang14.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang15.jpg'%}" title="温江"><img src="{% static 'public/img/kehufenxiang15.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang16.jpg'%}" title="新都"><img src="{% static 'public/img/kehufenxiang16.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang17.jpg'%}" title="新都"><img src="{% static 'public/img/kehufenxiang17.jpg'%}"></a>
+        <a href="{% static 'public/img/kehufenxiang18.jpg'%}" title="九茹村"><img src="{% static 'public/img/kehufenxiang18.jpg'%}"></a>
+
+        </div>
+    </div>
 	</div>
 </div>
 <!-- <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script> -->
-<script type="text/javascript">
-	$(function() {
-		var bigImg = '';
-		var _index = 0;
-		$(".popup").click(function() {
-			$(".picbox").hide();
-			$(this).hide();
-		});
-		$(".col_1_of_single img").click(function() {
-			center($(".picbox"));
-			$(".popup").show();
-			$(".picbox").show();
-			bigImg = $(this).attr("src");//获取点击图片的地址
-			//alert(bigImg);
-			$(".picbox img.big").attr("src", bigImg); //更换大图的图片地址
-			_index = $(this).index();//保存图片的序列号
-			//alert(_index);
-		});
-		$(".right").click(function() {
-			_index++; //序列号加1 _index+1
-			if (_index > 8) {
-				_index = 0
-			}
-			;
-			bigImg = $(".col_1_of_single img").eq(_index).attr("src");
-			$(".picbox img.big").attr("src", bigImg);
-		});
-		$(".left").click(function() {
-			_index--; //序列号加1 _index+1
-			if (_index < -1) {
-				_index = 8
-			}
-			;
-			bigImg = $(".col_1_of_single img").eq(_index).attr("src");
-			$(".picbox img.big").attr("src", bigImg);
-		});
-		function center(obj) {
-			var screenWidth = $(window).width(), screenHeight = $(window)
-					.height(); //当前浏览器窗口的 宽高
-			var scrolltop = $(document).scrollTop();//获取当前窗口距离页面顶部高度
-			var objLeft = (screenWidth - obj.width()) / 2;
-			var objTop = (screenHeight - obj.height()) / 2 + scrolltop;
-			obj.css({
-				left : objLeft + 'px',
-				top : objTop + 'px',
-				'display' : 'block'
-			});
-		}
-	})
-</script>
+
+<script type="text/javascript" src="{% static 'public/js/baguetteBox.js'%}"></script>
+    <script>
+window.onload = function() {
+    baguetteBox.run('.baguetteBoxOne');
+    baguetteBox.run('.baguetteBoxTwo');
+    baguetteBox.run('.baguetteBoxThree', {
+        animation: 'fadeIn',
+    });
+    baguetteBox.run('.baguetteBoxFour', {
+        buttons: false
+    });
+    baguetteBox.run('.baguetteBoxFive');
+};
+    </script>
 {% endblock %}
