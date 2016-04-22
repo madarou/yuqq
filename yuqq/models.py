@@ -108,7 +108,19 @@ class Message(BaseModel):
 class Visitor(BaseModel):
     ip=models.CharField(max_length=20,null=True)
     time=models.DateTimeField(null=True)
-        
+    
+class News(BaseModel):
+    title=models.CharField(max_length=255,null=True)
+    answer=models.CharField(max_length=255,null=True)
+    time=models.DateTimeField(null=True)
+    popularit=models.CharField(max_length=10,null=True)
+    
+class Tips(BaseModel):
+    title=models.CharField(max_length=255,null=True)
+    content=models.TextField(null=True)
+    time=models.DateTimeField(null=True)
+    popularit=models.CharField(max_length=10,null=True)
+    
 if __name__=="__main__":
     #from yuqq.models import Product
     intro = Introduction(name="hello")

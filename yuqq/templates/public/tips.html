@@ -1,34 +1,22 @@
 {% extends "public/base.html" %} {% block content %} {% load static from staticfiles %}
 <script type="text/javascript">
-				var tips={{ tips|safe}}
-				console.log(tips)
+				var tips={{ tips|safe}};
+				//console.log(tips['content']);
+</script>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$("#tip_title").html(tips['title']);
+		$("#tip_content").html(tips['content']);
+	});
 </script>
 <div class="content">
 	<div class="content_box" style="padding-top: 10px;">
 		<div class="panel" style="border-color: #e05b5b;border-radius: 0px;">
 			<div class="panel-heading" style="background-color:#e05b5b;border-color:#e05b5b;">
-				<h3 class="panel-title">夏季养鱼小贴士</h3>
+				<h3 class="panel-title" id="tip_title" ></h3>
 			</div>
-			<div class="panel-body">
-				夏季天气炎热，室温的升高也会引起水温的升高，家中的观赏鱼如果喂养不当，可能导致其生病甚至死亡。因此夏季养鱼，想让鱼儿健康的生长，就要在水温、喂食、换水等方面多加注意。
-
-　　如果生存环境的温差超过8℃，一些观赏鱼会得“白点病”，鱼身上出现白色斑点，危害健康。要尽可能保证鱼缸内水温在不同时段相差不大，避免鱼缸在中午暴晒，将鱼缸置于室内阴凉处。发现鱼身上出现白斑点，可使用杀菌盐治病。
-
-　　养鱼一定要把水质放在第一位，夏天气温高细菌繁殖较快，食物容易变质，容易引起水质变坏，要勤换水，少喂食，建议两三天就换一次水，一般是从鱼缸内抽走五分之一的水，再补进等量的水即可。
-
-　　夏季给鱼喂食，本着“少喂多餐”的原则，早晚各喂一次，每次的量减为原来每顿的一半左右。每周还要饿上一天不喂食。
-
-　　气温高、气压低的天气里，一些耗氧量比较大的观赏鱼，会像人一样被“闷”着，出现“食欲不振”的情况。可使用氧气泵，或用专业的降温风扇，给鱼缸内的水加氧、降温。也可在矿泉水瓶内灌满凉水，放入冰箱冻成冰，再擦干净水瓶，将“冰瓶”放于鱼缸内，给水降温。
-
-　　在给鱼缸降温上也有讲究，首先缸子摆设的地点千万不要正向阳光，千万不要想说可以偷一点自然光源以加强灯光的不足，最好是放在没有阳光直照空间。其次，屋子里尽可能通风良好，以保持室温本身不会太高，通风良好也可确保湿气不会太高而侵蚀到家具
-
-　　鱼缸中的沉水马达绝对不要太多，适当的计算一下所需的过滤水量，并采用合适的马达，或者在温度过高的情况下停下一些辅助扬水的马达。
-
-　　灯光的强度也是造成温度上升的主因，可是灯光又很重要，并无法说可以随便拿掉几根，所以若你原本灯具摆的离水面很近，在温度攀升相当高时你可以试着垫一点保丽龙抬高一点，牺牲一点灯光以降低一点温度。若你是采用水中灯具，请你绝对将其拿离水面。
-
-　　关于风扇的摆法也很重要，若你只是以一个大风扇朝缸子方向吹，或是拿一个计算机用的风扇朝水面吹，效果都是有限的，重点在于风扇的风量要够、要使风向呈现对流状态，你可以买三个大的风扇并将其并在一起，这样可以架在缸子上，风量也够大。
-
-　　最后，降温措施不要影响鱼，温度应慢慢下降，不得忽高忽下，有条件请使用温度计。夏日酷暑，鱼儿跟人一样，也会减少觅食等活动，请不要故意逗弄它，这样有利于鱼儿生长。
+			<div class="panel-body" id="tip_content">
+				
 			</div>
 		</div>
 		<div class="clearfix"></div>

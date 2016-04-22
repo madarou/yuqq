@@ -26,8 +26,10 @@ def aboutme(request):
 def news(request):
     return render_to_response('public/news.html',{'news':json.dumps('新闻')})
 
-def tips(request):
-    return render_to_response('public/tips.html',{'tips':json.dumps('小贴士')})
+def tips(request,num):
+    tip = Tips.objects.get(id=num).toJSON()
+    print tip
+    return render_to_response('public/tips.html',{'tips': tip})
 
 def services(request,kind='none'):
     return render_to_response('public/services.html',{'Service':json.dumps(kind)})
