@@ -40,13 +40,13 @@ def message(request):
 def products(request,catalogue='none', kind='none'):
     products=None
     if catalogue=='none' and kind=='none':
-        products=serializers.serialize("json", Product.objects.filter(show='yes'))
+        products=serializers.serialize("json", Product.objects.filter(show='yes').order_by('catalogue'))
     elif catalogue != 'none':
         products=serializers.serialize("json", Product.objects.filter(catalogue=catalogue,show='yes'))
     elif kind != 'none':
-        products=serializers.serialize("json", Product.objects.filter(kind=kind,show='yes'))
+        products=serializers.serialize("json", Product.objects.filter(kind=kind,show='yes').order_by('catalogue'))
     else:
-        products=serializers.serialize("json", Product.objects.filter(show='yes'))
+        products=serializers.serialize("json", Product.objects.filter(show='yes').order_by('catalogue'))
     return render_to_response('public/products.html',{'Products':products})
 
 def knowledge(request):

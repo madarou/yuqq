@@ -16,9 +16,9 @@
 				arr.splice($.inArray('',arr),1); 
 				arr.splice($.inArray('none',arr),1); 
 				console.log(arr[0]);
-				var creatureGroup=new Array('creature','redaiyu','lengshuiyu','shuicao','wugui','beilei','cre_other');
-				var equipmentGroup=new Array('equipment','yugang','shuibeng','jiareqi','guolvqi','shuiwenji','equ_other');
-				var otherGroup=new Array('other','dsy_sl','rdy_sl','shanhushi','huotanfen','oth_other');
+				var creatureGroup=new Array('creature','redaiyu','lengshuiyu','shuicao','gui','beilei','cre_other');
+				var equipmentGroup=new Array('equipment','yugang','zengyangshebei','jiawenbang','guolvshebei','wenduji','equ_other','shuizudeng','laoyuwang');
+				var otherGroup=new Array('other','xingzhuangsiliao','gongnengsiliao','yaoji','shashi','chenmu');
 				if($.inArray(arr[0],creatureGroup)!=-1){
 					$('#catalog-select').val('creature');
 				}
