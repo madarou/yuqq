@@ -1,7 +1,6 @@
 {% extends "public/base.html" %} {% block content %} {% load static from staticfiles %}
 <script type="text/javascript">
 	var products_server={{ Products|safe}};
-	console.log(JSON.stringify(products_server));
 </script>
 <script type="text/javascript" src="{% static 'public/js/products.js'%}"></script>
 <script type="text/javascript">

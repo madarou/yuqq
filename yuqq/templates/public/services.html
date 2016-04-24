@@ -25,7 +25,6 @@
 </style>
 <script type="text/javascript">
 	var service_server={{ Service|safe}};
-	console.log(JSON.stringify(service_server));
 	jQuery(document).ready(function($){
 		$("#"+service_server).addClass('img-active');
 		$("#closepop").bind("click",function(event){

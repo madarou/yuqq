@@ -1,9 +1,7 @@
 {% extends "public/base.html" %} {% block content %} {% load static from staticfiles %}
 <script type="text/javascript">
 	var product_server={{ Product|safe}};
-	console.log(JSON.stringify(product_server));
 	var intro_server={{ Introduction|safe}};
-	console.log(JSON.stringify(intro_server));
 </script>
 <link href="{% static 'public/css/etalage.css'%}" rel='stylesheet' type='text/css' />
 <script type="text/javascript" src="{% static 'public/js/detail.js'%}"></script>
@@ -86,43 +84,43 @@
      <h4 class="head_single">相关推荐</h4>
              <div class="single_span_3">
 	          	 <div class="col-sm-3 span_4">
-	          	     <a href="/detail/血鹦鹉"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
+	          	     <a href="/detail/龙鱼"> <img
+							src="{% static 'public/img/longyu_5.jpg'%}" class="img-responsive"
 							alt="" />
 						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a href="#" class="btn1 btn6 btn-1 btn1-1b" style="margin-top:0px;padding: 3px 20px">888</a>
+						<h3>龙鱼</h3>
+						<p>水不在深，有龙则灵</p>
+						<a href="#" class="btn1 btn6 btn-1 btn1-1b" style="margin-top:0px;padding: 3px 20px">70</a>
 						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
 			     </div> 
 				 <div class="col-sm-3 span_4">
-	          	     <a href="/detail/血鹦鹉"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
+	          	     <a href="/detail/七彩神仙"> <img
+							src="{% static 'public/img/qicaishenxian_5.jpg'%}" class="img-responsive"
 							alt="" />
 						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a href="#" class="btn1 btn6 btn-1 btn1-1b" style="margin-top:0px;padding: 3px 20px">888</a>
+						<h3>七彩神仙</h3>
+						<p>驾着七彩来娶你</p>
+						<a href="#" class="btn1 btn6 btn-1 btn1-1b" style="margin-top:0px;padding: 3px 20px">80</a>
 						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
 			      </div> 
 				  <div class="col-sm-3 span_4">
-	          	     <a href="/detail/血鹦鹉"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
+	          	     <a href="/detail/斗鱼"> <img
+							src="{% static 'public/img/douyu_5.jpg'%}" class="img-responsive"
 							alt="" />
 						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a href="#" class="btn1 btn6 btn-1 btn1-1b" style="margin-top:0px;padding: 3px 20px">888</a>
+						<h3>斗鱼</h3>
+						<p>燃烧青春，奋不顾身</p>
+						<a href="#" class="btn1 btn6 btn-1 btn1-1b" style="margin-top:0px;padding: 3px 20px">10</a>
 						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
 			      </div> 
 				  <div class="col-sm-3 span_4">
-	          	     <a href="/detail/血鹦鹉"> <img
-							src="{% static 'public/img/m1.jpg'%}" class="img-responsive"
+	          	     <a href="/detail/琉金"> <img
+							src="{% static 'public/img/liujin_5.jpg'%}" class="img-responsive"
 							alt="" />
 						</a>
-						<h3>血色鹦鹉</h3>
-						<p>财源滚滚发财鱼</p>
-						<a href="#" class="btn1 btn6 btn-1 btn1-1b" style="margin-top:0px;padding: 3px 20px">888</a>
+						<h3>琉金</h3>
+						<p>净土无尘垢，琉璃放光华</p>
+						<a href="#" class="btn1 btn6 btn-1 btn1-1b" style="margin-top:0px;padding: 3px 20px">8</a>
 						<a href="{% url 'detail'%}" style="font-size:50%;margin-left: 1em;">详情</a>
 			      </div> 
 				  <div class="clearfix"></div>
